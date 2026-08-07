@@ -8,14 +8,14 @@ export const api = {
     const history = await res.json();
     if (!history.length) return { days: 0, total_n: 0, summary: { hit_rate_all: 0, hit_rate_top12: 0, hit_rate_high_conf: null, avg_actual: 0 }, recent: [] };
     const latest = history[history.length - 1];
-    const totalSamples = history.reduce((sum, d) => sum + (d.total_samples || 0), 0);
+    const totalSamples = history.reduce((sum, d) => sum + (d.n || 0), 0);
     return {
       days: history.length,
       total_n: totalSamples,
       summary: {
-        hit_rate_all: latest.hit_rate_all != null ? latest.hit_rate_all : latest.hit_rate,
-        hit_rate_top12: latest.top12_hit_rate,
-        hit_rate_high_conf: latest.high_conf_hit_rate != null ? latest.high_conf_hit_rate : null,
+        hit_rate_all: ((latest.hit_rate_all != null ? latest.hit_rate_all : latest.hit_rate) || 0) * 100,
+        hit_rate_top12: (latest.top12_hit_rate || 0) * 100,
+        hit_rate_high_conf: latest.high_conf_hit_rate != null ? latest.high_conf_hit_rate * 100 : null,
         avg_actual: latest.avg_actual,
         baseline: 49.2
       },
