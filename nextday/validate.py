@@ -118,6 +118,19 @@ def validate_all():
                 detail_path = path.replace("pred_", "detail_")
                 with open(detail_path, "w", encoding="utf-8") as fp:
                     json.dump(res["detail"], fp, ensure_ascii=False, indent=1)
+                
+                # 把actual/hit写回pred文件
+                detail_map = {d["code"]: d for d in res["detail"]}
+                with open(path, encoding="utf-8") as fp:
+                    pred = json.load(fp)
+                for p in pred["predictions"]:
+                    code = p["code"]
+                    if code in detail_map:
+                        p["actual"] = detail_map[code]["actual"]
+                        p["hit"] = detail_map[code]["hit"]
+                pred["validated"] = True
+                with open(path, "w", encoding="utf-8") as fp:
+                    json.dump(pred, fp, ensure_ascii=False, indent=1)
     if added:
         save_history(history)
     return added
