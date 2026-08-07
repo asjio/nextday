@@ -7,16 +7,41 @@ export const api = {
     if (!res.ok) return { days: 0, total_n: 0, summary: { hit_rate_all: 0, hit_rate_top12: 0, hit_rate_high_conf: null, avg_actual: 0 }, recent: [] };
     const history = await res.json();
     if (!history.length) return { days: 0, total_n: 0, summary: { hit_rate_all: 0, hit_rate_top12: 0, hit_rate_high_conf: null, avg_actual: 0 }, recent: [] };
-    const latest = history[history.length - 1];
-    const totalSamples = history.reduce((sum, d) => sum + (d.n || 0), 0);
+    
+    // 累计统计: 加权平均
+    let totalN = 0, totalHits = 0, totalT12Hits = 0, t12Count = 0;
+    let totalHcHits = 0, hcCount = 0;
+    let totalReturn = 0;
+    
+    for (const rec of history) {
+      const n = rec.n || 0;
+      totalN += n;
+      totalHits += (rec.hit_rate || 0) * n;
+      
+      if (rec.top12_hit_rate != null) {
+        totalT12Hits += rec.top12_hit_rate * 12;
+        t12Count += 12;
+      }
+      if (rec.high_conf_hit_rate != null && rec.high_conf_n) {
+        totalHcHits += rec.high_conf_hit_rate * rec.high_conf_n;
+        hcCount += rec.high_conf_n;
+      }
+      totalReturn += (rec.avg_actual || 0) * n;
+    }
+    
+    const hitAll = totalN > 0 ? (totalHits / totalN) * 100 : 0;
+    const hitTop12 = t12Count > 0 ? (totalT12Hits / t12Count) * 100 : 0;
+    const hitHc = hcCount > 0 ? (totalHcHits / hcCount) * 100 : null;
+    const avgRet = totalN > 0 ? totalReturn / totalN : 0;
+    
     return {
       days: history.length,
-      total_n: totalSamples,
+      total_n: totalN,
       summary: {
-        hit_rate_all: ((latest.hit_rate_all != null ? latest.hit_rate_all : latest.hit_rate) || 0) * 100,
-        hit_rate_top12: (latest.top12_hit_rate || 0) * 100,
-        hit_rate_high_conf: latest.high_conf_hit_rate != null ? latest.high_conf_hit_rate * 100 : null,
-        avg_actual: latest.avg_actual,
+        hit_rate_all: Math.round(hitAll * 10) / 10,
+        hit_rate_top12: Math.round(hitTop12 * 10) / 10,
+        hit_rate_high_conf: hitHc != null ? Math.round(hitHc * 10) / 10 : null,
+        avg_actual: Math.round(avgRet * 100) / 100,
         baseline: 49.2
       },
       recent: history.slice().reverse().slice(0, 10)
@@ -42,7 +67,6 @@ export const api = {
     const res = await fetch(`${RAW_BASE}/predictions/pred_${date}.json`);
     if (!res.ok) throw new Error(`无法加载 ${date} 的预测数据`);
     const raw = await res.json();
-    // 转换为 App.jsx 期望的结构
     return {
       date: raw.trade_date || raw.date,
       target_date: raw.target_date || null,
@@ -61,6 +85,13 @@ export const api = {
         hit: p.hit != null ? p.hit : null,
       }))
     };
+  },
+  
+  // 对账明细(用于计算当日命中率)
+  detail: async (date) => {
+    const res = await fetch(`${RAW_BASE}/predictions/detail_${date}.json`);
+    if (!res.ok) return null;
+    return res.json();
   },
   
   run: async () => {
