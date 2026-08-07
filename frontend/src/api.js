@@ -63,16 +63,18 @@ export const api = {
     return { dates: manifest.dates || [], validated: manifest.validated || {} };
   },
   
-  predictions: async (date) => {
+  predictions: async (date, validatedMap = {}) => {
     const res = await fetch(`${RAW_BASE}/predictions/pred_${date}.json`);
     if (!res.ok) throw new Error(`无法加载 ${date} 的预测数据`);
     const raw = await res.json();
+    // 优先用manifest的validated状态，再fallback到pred文件自身的validated字段
+    const isValidated = validatedMap[date] || raw.validated || false;
     return {
       date: raw.trade_date || raw.date,
       target_date: raw.target_date || null,
       n_samples: raw.n_samples,
       baseline: raw.baseline,
-      validated: raw.validated || false,
+      validated: isValidated,
       items: (raw.predictions || []).map(p => ({
         code: (p.code || "").slice(-6),
         name: p.name,
