@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# 运行时生成数据(预测存档/胜率记录/报告图)
+data/
+
+# 日志
+*.log
+
+# IDE/OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
