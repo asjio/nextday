@@ -126,7 +126,12 @@ jobs:
           # 更新manifest
           preds = glob.glob('data/predictions/pred_*.json')
           dates = sorted([os.path.basename(f).replace('pred_','').replace('.json','') for f in preds])
-          manifest = json.dumps({'dates': dates}, indent=2)
+          # 检查哪些日期已对账（有detail文件）
+          validated = {}
+          for date in dates:
+              detail_path = f'data/predictions/detail_{date}.json'
+              validated[date] = os.path.exists(detail_path)
+          manifest = json.dumps({'dates': dates, 'validated': validated}, indent=2)
           manifest_b64 = base64.b64encode(manifest.encode()).decode()
           url = f'https://api.github.com/repos/{REPO}/contents/data/predictions/manifest.json'
           sha = None
