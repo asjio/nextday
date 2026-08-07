@@ -1,0 +1,71 @@
+# 部署到 GitHub Pages + Actions 的工作流
+#
+# 每日15:30(北京时间)定时执行:
+# 1. 对账旧预测(验证昨天预测的准确率)
+# 2. 运行模型生成今日新预测
+# 3. 构建前端(Vite build)
+# 4. 部署到 GitHub Pages
+
+name: 每日预测与对账
+
+on:
+  schedule:
+    # 北京时间 15:30 = UTC 07:30
+    - cron: '30 7 * * 1-5'
+  workflow_dispatch:  # 允许手动触发
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  predict:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: 安装依赖
+        run: |
+          python -m pip install numpy pandas matplotlib requests -q
+
+      - name: 对账旧预测 + 生成新预测
+        run: |
+          python -m nextday.main
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+
+      - name: 提交预测结果到仓库
+        run: |
+          git config user.name "nextday-bot"
+          git config user.email "nextday-bot@users.noreply.github.com"
+          git add data/
+          git diff --quiet && git diff --staged --quiet || git commit -m "daily: 更新预测数据 $(date +'%Y-%m-%d')"
+          git push
+
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: 构建前端
+        run: |
+          cd frontend
+          npm install --no-audit --no-fund
+          npm run build
+
+      - name: 上传 Pages 产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: frontend/dist
+
+      - name: 部署到 GitHub Pages
+        uses: actions/deploy-pages@v4
