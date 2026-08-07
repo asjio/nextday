@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import { api } from "./api.js";
 import WinrateChart from "./WinrateChart.jsx";
 
@@ -8,26 +8,46 @@ const fmtPct = (v, signed = false) => {
   return s + Number(v).toFixed(2) + "%";
 };
 
-// ---------- tooltip提示 ----------
+// ---------- Portal Tooltip ----------
 function Tip({ text, children }) {
   const [show, setShow] = useState(false);
+  const [pos, setPos] = useState({ top: 0, left: 0 });
+  const triggerRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    if (triggerRef.current) {
+      const rect = triggerRef.current.getBoundingClientRect();
+      setPos({
+        top: rect.top - 8,
+        left: rect.left + rect.width / 2,
+      });
+    }
+    setShow(true);
+  };
+
   return (
-    <span
-      className="relative inline-block"
-      onMouseEnter={() => setShow(true)}
-      onMouseLeave={() => setShow(false)}
-    >
-      {children}
+    <>
+      <span
+        ref={triggerRef}
+        className="relative inline-block cursor-help border-b border-dashed border-ink-faint/50"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={() => setShow(false)}
+      >
+        {children}
+      </span>
       {show && (
-        <span className="absolute left-0 bottom-full mb-1 z-50 bg-ink text-white text-[11px] leading-tight px-2.5 py-1.5 rounded-md shadow-lg whitespace-normal w-48">
+        <div
+          className="fixed z-[9999] bg-ink text-white text-[11px] leading-tight px-2.5 py-1.5 rounded-md shadow-lg whitespace-normal w-48 -translate-x-1/2 -translate-y-full pointer-events-none"
+          style={{ top: pos.top, left: pos.left }}
+        >
           {text}
-        </span>
+        </div>
       )}
-    </span>
+    </>
   );
 }
 
-// ---------- 顶部累计统计 ----------
+// ---------- 累计统计卡片 ----------
 function StatBoard({ overview }) {
   const { days, total_n, summary } = overview;
   const cells = [
@@ -44,29 +64,29 @@ function StatBoard({ overview }) {
       unit: "个",
     },
     {
-      label: "全体命中率",
-      tip: "全部候选股(约200只)次日实际上涨的比例",
+      label: "累计全体命中率",
+      tip: "所有交易日全部候选股次日实际上涨的加权比例",
       value: summary.hit_rate_all,
       unit: "%",
       good: true,
     },
     {
-      label: "Top12命中率",
-      tip: "综合上涨概率、大跌风险、稳定性评分后排名前12的股票，其次日实际上涨比例",
+      label: "累计Top12命中率",
+      tip: "所有交易日Top12股票次日实际上涨的平均比例",
       value: summary.hit_rate_top12,
       unit: "%",
       good: true,
     },
     {
-      label: "高置信命中率",
-      tip: "模型预测上涨概率>=70%的股票中，次日实际上涨的比例",
+      label: "累计高置信命中率",
+      tip: "所有交易日高置信股票次日实际上涨的加权比例",
       value: summary.hit_rate_high_conf ?? "--",
       unit: summary.hit_rate_high_conf != null ? "%" : "",
       good: true,
     },
     {
-      label: "平均次日收益",
-      tip: "全部候选股次日实际平均涨跌幅",
+      label: "累计平均收益",
+      tip: "所有交易日候选股次日实际加权平均收益",
       value: fmtPct(summary.avg_actual, true),
       unit: "",
       good: summary.avg_actual >= 0,
@@ -78,7 +98,7 @@ function StatBoard({ overview }) {
         <div key={c.label} className="bg-card border border-line rounded-lg px-4 py-3">
           <div className="text-[11px] text-ink-faint mb-1">
             <Tip text={c.tip}>
-              <span className="cursor-help border-b border-dashed border-ink-faint/50">{c.label}</span>
+              <span>{c.label}</span>
             </Tip>
           </div>
           <div className={`font-num text-xl font-semibold ${c.good ? "text-rise" : "text-ink"}`}>
@@ -87,6 +107,48 @@ function StatBoard({ overview }) {
           </div>
         </div>
       ))}
+    </div>
+  );
+}
+
+// ---------- 当日统计卡片 ----------
+function DayBoard({ date, detail }) {
+  if (!detail || detail.length === 0) return null;
+
+  const hitAll = detail.filter(d => d.hit).length;
+  const rateAll = (hitAll / detail.length * 100).toFixed(1);
+  
+  const top12 = detail.slice(0, 12);
+  const hitTop12 = top12.filter(d => d.hit).length;
+  const rateTop12 = (hitTop12 / 12 * 100).toFixed(1);
+  
+  const hc = detail.filter(d => d.p_up >= 70);
+  const hitHc = hc.filter(d => d.hit).length;
+  const rateHc = hc.length > 0 ? (hitHc / hc.length * 100).toFixed(1) : null;
+
+  const cells = [
+    { label: "当日样本", value: detail.length, unit: "个" },
+    { label: "当日命中率", value: rateAll, unit: "%" },
+    { label: "当日Top12", value: rateTop12, unit: "%" },
+    { label: "当日高置信", value: rateHc ?? "--", unit: rateHc != null ? "%" : "" },
+  ];
+
+  return (
+    <div className="bg-card border border-line rounded-lg px-4 py-3 mb-3">
+      <div className="text-[11px] text-ink-faint mb-2">
+        <span className="font-medium">{date}</span> 当日统计
+      </div>
+      <div className="grid grid-cols-4 gap-4">
+        {cells.map((c) => (
+          <div key={c.label}>
+            <div className="text-[11px] text-ink-faint">{c.label}</div>
+            <div className="font-num text-lg font-semibold text-rise">
+              {c.value}
+              <span className="text-xs text-ink-faint ml-1 font-normal">{c.unit}</span>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -116,7 +178,7 @@ function LedgerTable({ pred }) {
               {cols.map(([h, w, tip]) => (
                 <th key={h} className={`px-3 py-2.5 text-left font-medium text-xs ${w}`}>
                   <Tip text={tip}>
-                    <span className="cursor-help border-b border-dashed border-ink-faint/50">{h}</span>
+                    <span>{h}</span>
                   </Tip>
                 </th>
               ))}
@@ -229,6 +291,7 @@ export default function App() {
   const [validated, setValidated] = useState({});
   const [curDate, setCurDate] = useState(null);
   const [pred, setPred] = useState(null);
+  const [dayDetail, setDayDetail] = useState(null);
   const [err, setErr] = useState("");
 
   const loadAll = useCallback(() => {
@@ -248,8 +311,12 @@ export default function App() {
   useEffect(() => {
     if (!curDate) return;
     setPred(null);
+    setDayDetail(null);
     api.predictions(curDate).then(setPred).catch((e) => setErr(String(e)));
-  }, [curDate]);
+    if (validated[curDate]) {
+      api.detail(curDate).then(setDayDetail);
+    }
+  }, [curDate, validated]);
 
   if (err) {
     return (
@@ -317,22 +384,25 @@ export default function App() {
 
         {pred && (
           <>
+            {/* 当日统计 */}
+            {validated[curDate] && <DayBoard date={curDate} detail={dayDetail} />}
+            
             <div className="text-xs text-ink-soft mb-2 font-num flex items-center gap-4 flex-wrap">
               <Tip text="模型以这天收盘数据为基准运行">
-                <span className="cursor-help border-b border-dashed border-ink-faint/50">数据基准日</span>
+                <span>数据基准日</span>
               </Tip>{" "}
               <b className="text-ink">{pred.date}</b>
               <Tip text="模型预测的是这天的涨跌，通常是下一个交易日">
-                <span className="cursor-help border-b border-dashed border-ink-faint/50">预测目标日</span>
+                <span>预测目标日</span>
               </Tip>{" "}
               <b className="text-accent">{pred.target_date || "待定"}</b>
               {pred.target_date > today && <span className="text-ink-faint ml-1">(未到)</span>}
               <Tip text="用于找相似形态的历史交易日数量，越大越可靠">
-                <span className="cursor-help border-b border-dashed border-ink-faint/50">历史相似日样本</span>
+                <span>历史相似日样本</span>
               </Tip>{" "}
               {pred.n_samples}
               <Tip text="全市场随机买一只次日涨的概率，模型命中率需高于此才有价值">
-                <span className="cursor-help border-b border-dashed border-ink-faint/50">随机基准</span>
+                <span>随机基准</span>
               </Tip>{" "}
               {fmtPct(pred.baseline * 100)}
               {pred.validated ? (
