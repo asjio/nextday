@@ -4,7 +4,7 @@ import json
 import random
 from concurrent.futures import ThreadPoolExecutor
 from . import config
-from .datasource import snapshot, kline
+from .datasource import snapshot, kline, next_trading_date
 from .model import NextDayModel
 
 
@@ -71,7 +71,7 @@ def fetch_klines(codes, n=config.KLINE_LEN, workers=12):
 
 
 def run_predict():
-    """完整预测流程, 返回 {'trade_date', 'baseline', 'n_samples', 'predictions'}"""
+    """完整预测流程, 返回 {'trade_date', 'target_date', 'baseline', 'n_samples', 'predictions'}"""
     snap = snapshot()
     universe = pick_universe(snap)
     names = {r["code"]: r["name"] for r in universe}
@@ -87,8 +87,11 @@ def run_predict():
         if code in snap_r1:
             p["r1"] = round(snap_r1[code], 2)
     trade_date = preds[0]["date"] if preds else ""
+    # 计算预测目标日(通常是下一个交易日)
+    target_date = next_trading_date(trade_date) if trade_date else None
     return {
         "trade_date": trade_date,
+        "target_date": target_date,
         "baseline": round(model.baseline, 4),
         "n_samples": model.n_samples,
         "n_universe": len(universe),
