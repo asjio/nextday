@@ -44,12 +44,18 @@ jobs:
           PYTHONPATH: ${{ github.workspace }}
 
       - name: 提交预测结果到仓库
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config user.name "nextday-bot"
-          git config user.email "nextday-bot@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/
-          git diff --quiet && git diff --staged --quiet || git commit -m "daily: 更新预测数据 $(date +'%Y-%m-%d')"
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m "daily: 更新预测数据 $(date +'%Y-%m-%d')"
+            git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git HEAD:${{ github.ref_name }}
+          else
+            echo "没有新的预测数据需要提交"
+          fi
 
       - name: 设置 Node.js
         uses: actions/setup-node@v4
