@@ -94,17 +94,18 @@ function StatBoard({ overview }) {
 // ---------- 台账表格 ----------
 function LedgerTable({ pred }) {
   const cols = [
-    ["序", "w-10"],
-    ["代码", "w-20"],
-    ["名称", "w-28"],
-    ["明日上涨概率", "w-56"],
-    ["P涨>5%", "w-20"],
-    ["P大跌>5%", "w-20"],
-    ["次日中位", "w-24"],
-    ["今日涨幅", "w-24"],
+    ["序", "w-10", "排序序号"],
+    ["代码", "w-20", "股票代码"],
+    ["名称", "w-28", "股票名称"],
+    ["明日上涨概率", "w-56", "模型预测次日上涨的概率，数值越高越看好"],
+    ["P涨>5%", "w-20", "历史相似日中次日涨幅超过5%的比例，高表示大涨概率大"],
+    ["P大跌>5%", "w-20", "历史相似日中次日跌幅超过5%的比例，高表示风险大"],
+    ["次日中位", "w-24", "历史相似日次日收益的中位数"],
+    ["今日涨幅", "w-24", "当天实际涨跌幅"],
   ];
   if (pred.validated) {
-    cols.push(["实际涨跌", "w-24"], ["对账", "w-16"]);
+    cols.push(["实际涨跌", "w-24", "对账后的实际涨跌幅"]);
+    cols.push(["对账", "w-16", "是否命中预测"]);
   }
   return (
     <div className="bg-card border border-line rounded-lg overflow-hidden">
@@ -112,9 +113,11 @@ function LedgerTable({ pred }) {
         <table className="w-full text-[13px]">
           <thead className="sticky top-0 bg-paper z-10">
             <tr className="border-b border-line text-ink-soft">
-              {cols.map(([h, w]) => (
+              {cols.map(([h, w, tip]) => (
                 <th key={h} className={`px-3 py-2.5 text-left font-medium text-xs ${w}`}>
-                  {h}
+                  <Tip text={tip}>
+                    <span className="cursor-help border-b border-dashed border-ink-faint/50">{h}</span>
+                  </Tip>
                 </th>
               ))}
             </tr>
