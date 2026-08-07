@@ -38,6 +38,7 @@ jobs:
           python -m pip install numpy pandas matplotlib requests -q
 
       - name: 对账旧预测 + 生成新预测
+        continue-on-error: true
         run: |
           python -m nextday.main
         env:
