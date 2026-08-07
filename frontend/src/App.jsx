@@ -316,8 +316,33 @@ export default function App() {
     if (!curDate) return;
     setPred(null);
     setDayDetail(null);
-    api.predictions(curDate).then(setPred).catch((e) => setErr(String(e)));
-    if (validated[curDate]) {
+    const isValidated = validated[curDate] || false;
+    const loadPred = async () => {
+      const pred = await api.predictions(curDate, validated);
+      // 如果已对账，从detail文件加载actual/hit合并到pred items
+      if (isValidated) {
+        try {
+          const detail = await api.detail(curDate);
+          if (detail && detail.length) {
+            const detailMap = {};
+            for (const d of detail) {
+              const code6 = (d.code || "").slice(-6);
+              detailMap[code6] = d;
+            }
+            pred.items = pred.items.map(it => {
+              const d = detailMap[it.code];
+              if (d) {
+                return { ...it, actual: d.actual, hit: d.hit };
+              }
+              return it;
+            });
+          }
+        } catch (e) { /* detail文件不存在也没关系 */ }
+      }
+      setPred(pred);
+    };
+    loadPred().catch((e) => setErr(String(e)));
+    if (isValidated) {
       api.detail(curDate).then(setDayDetail);
     }
   }, [curDate, validated]);
