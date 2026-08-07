@@ -43,32 +43,10 @@ jobs:
         env:
           PYTHONPATH: ${{ github.workspace }}
 
-      - name: 提交预测结果
+      - name: 复制数据到前端目录
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config pull.rebase false
-          
-          # 检查是否有数据文件
-          if [ ! -d "data" ]; then
-            echo "data 目录不存在，创建目录"
-            mkdir -p data
-          fi
-          
-          # 添加数据文件
-          git add data/
-          
-          # 检查是否有变更
-          if git diff --staged --quiet; then
-            echo "没有新的预测数据需要提交"
-          else
-            # 拉取远程变更
-            git pull origin master --no-edit || echo "Pull 失败，继续提交"
-            
-            # 提交并推送
-            git commit -m "daily: 更新预测数据 $(date +%Y-%m-%d)"
-            git push origin master || echo "Push 失败"
-          fi
+          mkdir -p frontend/public/data
+          cp -r data/* frontend/public/data/ 2>/dev/null || echo "没有数据文件"
 
       - name: 设置 Node.js
         uses: actions/setup-node@v4
