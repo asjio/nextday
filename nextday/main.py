@@ -43,12 +43,9 @@ def main():
         sys.exit(1)
     td = result["trade_date"]
     pred_file = os.path.join(config.PRED_DIR, f"pred_{td}.json")
-    if not os.path.exists(pred_file):
-        with open(pred_file, "w", encoding="utf-8") as fp:
-            json.dump(result, fp, ensure_ascii=False, indent=1)
-        print(f"[预测] 已存 {pred_file}", flush=True)
-    else:
-        print(f"[预测] {pred_file} 已存在, 跳过", flush=True)
+    with open(pred_file, "w", encoding="utf-8") as fp:
+        json.dump(result, fp, ensure_ascii=False, indent=1)
+    print(f"[预测] 已存 {pred_file}", flush=True)
 
     print(f"[预测] 数据日期={td} 历史样本={result['n_samples']} "
           f"基准上涨率={result['baseline']*100:.1f}%", flush=True)
