@@ -164,11 +164,9 @@ function LedgerTable({ pred }) {
     ["P大跌>5%", "w-20", "历史相似日中次日跌幅超过5%的比例，高表示风险大"],
     ["次日中位", "w-24", "历史相似日次日收益的中位数"],
     ["今日涨幅", "w-24", "当天实际涨跌幅"],
+    ["实际涨跌", "w-24", "预测目标日实际涨跌幅，未到则显示--"],
+    ["对账", "w-16", "是否命中预测，未对账则显示--"],
   ];
-  if (pred.validated) {
-    cols.push(["实际涨跌", "w-24", "对账后的实际涨跌幅"]);
-    cols.push(["对账", "w-16", "是否命中预测"]);
-  }
   return (
     <div className="bg-card border border-line rounded-lg overflow-hidden">
       <div className="max-h-[520px] overflow-y-auto">
@@ -192,8 +190,9 @@ function LedgerTable({ pred }) {
                   : it.hit
                   ? "text-rise"
                   : "text-fall";
+              const rowBg = it.hit === false ? "bg-fall-soft" : "";
               return (
-                <tr key={it.code} className="ledger-row border-b border-line/60 last:border-0">
+                <tr key={it.code} className={`ledger-row ${rowBg} border-b border-line/60 last:border-0`}>
                   <td className="px-3 py-2 text-ink-faint font-num">{String(i + 1).padStart(2, "0")}</td>
                   <td className="px-3 py-2 font-num">{it.code}</td>
                   <td className="px-3 py-2">{it.name}</td>
@@ -209,7 +208,7 @@ function LedgerTable({ pred }) {
                   <td className="px-3 py-2 font-num text-fall">{it.p_down5}%</td>
                   <td className="px-3 py-2 font-num">{fmtPct(it.median, true)}</td>
                   <td className="px-3 py-2 font-num">{fmtPct(it.r1, true)}</td>
-                  {pred.validated && (
+                  {pred.validated ? (
                     <>
                       <td className={`px-3 py-2 font-num ${hitCls}`}>{fmtPct(it.actual, true)}</td>
                       <td className="px-3 py-2">
@@ -221,6 +220,11 @@ function LedgerTable({ pred }) {
                           <span className="tag-miss">失误</span>
                         )}
                       </td>
+                    </>
+                  ) : (
+                    <>
+                      <td className="px-3 py-2 font-num text-ink-faint">--</td>
+                      <td className="px-3 py-2 text-ink-faint text-xs">--</td>
                     </>
                   )}
                 </tr>
