@@ -1,10 +1,8 @@
 # 部署到 GitHub Pages + Actions 的工作流
 #
 # 每日15:30(北京时间)定时执行:
-# 1. 对账旧预测(验证昨天预测的准确率)
-# 2. 运行模型生成今日新预测
-# 3. 构建前端(Vite build)
-# 4. 部署到 GitHub Pages
+# 1. 构建前端(Vite build)
+# 2. 部署到 GitHub Pages
 
 name: 每日预测与对账
 
@@ -20,34 +18,11 @@ permissions:
   id-token: write
 
 jobs:
-  predict:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: 设置 Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.13'
-
-      - name: 安装依赖
-        run: |
-          python -m pip install numpy pandas matplotlib requests -q
-
-      - name: 对账旧预测 + 生成新预测
-        continue-on-error: true
-        run: |
-          python -m nextday.main
-        env:
-          PYTHONPATH: ${{ github.workspace }}
-
-      - name: 复制数据到前端目录
-        run: |
-          mkdir -p frontend/public/data
-          cp -r data/* frontend/public/data/ 2>/dev/null || echo "没有数据文件"
 
       - name: 设置 Node.js
         uses: actions/setup-node@v4
