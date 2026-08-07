@@ -1,0 +1,46 @@
+[
+ {
+  "pred_date": "2026-08-05",
+  "target_date": "2026-08-06",
+  "n": 201,
+  "hit_rate": 0.6219,
+  "avg_actual": 1.6,
+  "top12_hit_rate": 0.9167,
+  "top12_avg": 4.062,
+  "high_conf_n": 17,
+  "high_conf_hit_rate": 0.9412,
+  "high_conf_avg": 4.595,
+  "top5": [
+   {
+    "code": "300248",
+    "name": "新开普",
+    "p_up": 0.833,
+    "actual": -1.19
+   },
+   {
+    "code": "002119",
+    "name": "康强电子",
+    "p_up": 0.767,
+    "actual": 3.63
+   },
+   {
+    "code": "301511",
+    "name": "德福科技",
+    "p_up": 0.767,
+    "actual": 1.9
+   },
+   {
+    "code": "300666",
+    "name": "江丰电子",
+    "p_up": 0.75,
+    "actual": 7.29
+   },
+   {
+    "code": "301392",
+    "name": "汇成真空",
+    "p_up": 0.75,
+    "actual": 3.87
+   }
+  ]
+ }
+]
