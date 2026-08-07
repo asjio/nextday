@@ -75,10 +75,17 @@ def run_predict():
     snap = snapshot()
     universe = pick_universe(snap)
     names = {r["code"]: r["name"] for r in universe}
+    # 用快照的zdf作为准确的今日涨幅(快照数据收盘后是准确的)
+    snap_r1 = {r["code"]: _num(r, "zdf") for r in universe}
     klines = fetch_klines([r["code"] for r in universe])
     kline_dict = {c: {"name": names.get(c, ""), "rows": rows} for c, rows in klines.items()}
     model = NextDayModel().build(kline_dict)
     preds = model.predict_all()
+    # 用快照的准确涨跌幅覆盖K线计算的r1
+    for p in preds:
+        code = p["code"]
+        if code in snap_r1:
+            p["r1"] = round(snap_r1[code], 2)
     trade_date = preds[0]["date"] if preds else ""
     return {
         "trade_date": trade_date,
