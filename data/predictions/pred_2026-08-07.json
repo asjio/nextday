@@ -1,5 +1,6 @@
 {
  "trade_date": "2026-08-07",
+ "target_date": "2026-08-10",
  "baseline": 0.4927,
  "n_samples": 113846,
  "n_universe": 203,
