@@ -17,6 +17,29 @@ for _f in ["Microsoft YaHei", "SimHei", "DengXian"]:
 plt.rcParams["axes.unicode_minus"] = False
 
 
+def divergence_section(records=None):
+    """Top12 vs 全体背离监控: Top12是专门挑的, 跑输全体说明选股逻辑与市场风格冲突"""
+    records = records or load_history()
+    if not records:
+        return ""
+    lines = []
+    recent = records[-5:]
+    for r in recent:
+        d_hit = (r["top12_hit_rate"] - r["hit_rate"]) * 100
+        d_ret = r["top12_avg"] - r["avg_actual"]
+        flag = "正常" if d_ret >= 0 else "背离"
+        lines.append(f"  {r['target_date']}: 命中率差{d_hit:+.1f}pct 收益差{d_ret:+.2f}pct [{flag}]")
+    streak = 0
+    for r in reversed(records):
+        if r["top12_avg"] - r["avg_actual"] < 0:
+            streak += 1
+        else:
+            break
+    if streak >= 3:
+        lines.append(f"  [警告] Top12已连续{streak}天跑输全体, 选股逻辑可能与当前市场风格冲突")
+    return "\n".join(lines)
+
+
 def plot_winrate(records=None, out_path=None):
     """胜率曲线: 全体/Top12/高置信组 三条命中率 + 基准线"""
     records = records or load_history()
