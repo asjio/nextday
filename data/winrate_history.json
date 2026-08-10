@@ -42,5 +42,49 @@
     "actual": 3.87
    }
   ]
+ },
+ {
+  "pred_date": "2026-08-07",
+  "target_date": "2026-08-10",
+  "n": 201,
+  "hit_rate": 0.5771,
+  "avg_actual": 0.846,
+  "top12_hit_rate": 0.4167,
+  "top12_avg": -1.321,
+  "high_conf_n": 18,
+  "high_conf_hit_rate": 0.4444,
+  "high_conf_avg": -0.274,
+  "top5": [
+   {
+    "code": "301123",
+    "name": "奕东电子",
+    "p_up": 0.8,
+    "actual": -4.7
+   },
+   {
+    "code": "002636",
+    "name": "金安国纪",
+    "p_up": 0.8,
+    "actual": 2.11
+   },
+   {
+    "code": "301396",
+    "name": "宏景科技",
+    "p_up": 0.783,
+    "actual": -2.91
+   },
+   {
+    "code": "000623",
+    "name": "吉林敖东",
+    "p_up": 0.733,
+    "actual": 0.83
+   },
+   {
+    "code": "301008",
+    "name": "宏昌科技",
+    "p_up": 0.733,
+    "actual": -7.51
+   }
+  ]
  }
 ]
