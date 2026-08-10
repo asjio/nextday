@@ -10,7 +10,7 @@ import datetime
 from . import config
 from .pipeline import run_predict
 from .validate import validate_all, load_history
-from .report import plot_winrate, text_summary
+from .report import plot_winrate, text_summary, divergence_section
 
 
 def today_str():
@@ -63,6 +63,10 @@ def main():
         print(f"\n[报告] 胜率曲线: {img}", flush=True)
         print("[累计统计]", flush=True)
         print(text_summary(records), flush=True)
+        div = divergence_section(records)
+        if div:
+            print("[Top12背离监控]", flush=True)
+            print(div, flush=True)
     else:
         print("\n[报告] 胜率记录为空(首次运行, 明天起有对账数据)", flush=True)
     print("===== 完成 =====", flush=True)
