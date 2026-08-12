@@ -130,5 +130,49 @@
     "actual": 1.45
    }
   ]
+ },
+ {
+  "pred_date": "2026-08-11",
+  "target_date": "2026-08-12",
+  "n": 198,
+  "hit_rate": 0.6566,
+  "avg_actual": 1.247,
+  "top12_hit_rate": 0.4167,
+  "top12_avg": 0.09,
+  "high_conf_n": 2,
+  "high_conf_hit_rate": 0.0,
+  "high_conf_avg": -3.085,
+  "top5": [
+   {
+    "code": "002351",
+    "name": "漫步者",
+    "p_up": 0.7,
+    "actual": -0.4
+   },
+   {
+    "code": "300426",
+    "name": "华智数媒",
+    "p_up": 0.7,
+    "actual": -5.77
+   },
+   {
+    "code": "000802",
+    "name": "北京文化",
+    "p_up": 0.683,
+    "actual": 10.06
+   },
+   {
+    "code": "000859",
+    "name": "国风新材",
+    "p_up": 0.667,
+    "actual": -2.67
+   },
+   {
+    "code": "002721",
+    "name": "金一文化",
+    "p_up": 0.667,
+    "actual": -1.31
+   }
+  ]
  }
 ]
