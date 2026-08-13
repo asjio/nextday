@@ -174,5 +174,49 @@
     "actual": -1.31
    }
   ]
+ },
+ {
+  "pred_date": "2026-08-12",
+  "target_date": "2026-08-13",
+  "n": 203,
+  "hit_rate": 0.2167,
+  "avg_actual": -1.045,
+  "top12_hit_rate": 0.1667,
+  "top12_avg": -2.476,
+  "high_conf_n": 1,
+  "high_conf_hit_rate": 0.0,
+  "high_conf_avg": -2.95,
+  "top5": [
+   {
+    "code": "000715",
+    "name": "中兴商业",
+    "p_up": 0.7,
+    "actual": -2.95
+   },
+   {
+    "code": "002178",
+    "name": "延华智能",
+    "p_up": 0.667,
+    "actual": -5.3
+   },
+   {
+    "code": "600266",
+    "name": "城建发展",
+    "p_up": 0.65,
+    "actual": -4.35
+   },
+   {
+    "code": "600572",
+    "name": "康恩贝",
+    "p_up": 0.65,
+    "actual": -1.47
+   },
+   {
+    "code": "002421",
+    "name": "达实智能",
+    "p_up": 0.65,
+    "actual": -7.99
+   }
+  ]
  }
 ]
