@@ -218,5 +218,49 @@
     "actual": -7.99
    }
   ]
+ },
+ {
+  "pred_date": "2026-08-13",
+  "target_date": "2026-08-14",
+  "n": 193,
+  "hit_rate": 0.3938,
+  "avg_actual": -0.435,
+  "top12_hit_rate": 0.3333,
+  "top12_avg": -0.454,
+  "high_conf_n": 3,
+  "high_conf_hit_rate": 0.3333,
+  "high_conf_avg": 0.23,
+  "top5": [
+   {
+    "code": "603890",
+    "name": "春秋电子",
+    "p_up": 0.733,
+    "actual": 8.02
+   },
+   {
+    "code": "300365",
+    "name": "恒华科技",
+    "p_up": 0.7,
+    "actual": -1.24
+   },
+   {
+    "code": "002921",
+    "name": "联诚精密",
+    "p_up": 0.7,
+    "actual": -6.09
+   },
+   {
+    "code": "600821",
+    "name": "金开新能",
+    "p_up": 0.683,
+    "actual": -3.08
+   },
+   {
+    "code": "603236",
+    "name": "移远通信",
+    "p_up": 0.683,
+    "actual": 2.12
+   }
+  ]
  }
 ]
