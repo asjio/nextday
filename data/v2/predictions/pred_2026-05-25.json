@@ -1,0 +1,17 @@
+{
+ "version": "v2",
+ "backfilled": true,
+ "trade_date": "2026-05-25",
+ "gate_open": false,
+ "gate_closed_reason": "指数4153跌破MA10(4158)",
+ "market": {
+  "market_state": "range",
+  "index_close": 4152.569,
+  "ma_gate": 4157.6365000000005,
+  "breadth": 0.5866666666666667,
+  "breadth_th": 0.55
+ },
+ "buy_date": "2026-05-26",
+ "sell_date": "2026-05-27",
+ "predictions": []
+}
