@@ -1,0 +1,237 @@
+{
+ "version": "v2",
+ "backfilled": true,
+ "trade_date": "2026-08-10",
+ "strategy": "动量20日 + 指数MA10闸门",
+ "gate_open": true,
+ "market": {
+  "market_state": "range",
+  "index_close": 3966.594,
+  "ma20": 3859.609999999999
+ },
+ "buy_date": "2026-08-11",
+ "sell_date": "2026-08-12",
+ "validated": true,
+ "predictions": [
+  {
+   "code": "sh603228",
+   "name": "景旺电子",
+   "rank": 1,
+   "momentum20": 46.27,
+   "r1": 1.11,
+   "at_limit_up": false,
+   "ltsz": 951.8,
+   "actual": 10.0,
+   "hit": true
+  },
+  {
+   "code": "sz000975",
+   "name": "山金国际",
+   "rank": 2,
+   "momentum20": 39.04,
+   "r1": 3.0,
+   "at_limit_up": false,
+   "ltsz": 679.3,
+   "actual": 2.0,
+   "hit": true
+  },
+  {
+   "code": "sh601168",
+   "name": "西部矿业",
+   "rank": 3,
+   "momentum20": 38.32,
+   "r1": -1.44,
+   "at_limit_up": false,
+   "ltsz": 937.5,
+   "actual": -2.17,
+   "hit": false
+  },
+  {
+   "code": "sz300759",
+   "name": "康龙化成",
+   "rank": 4,
+   "momentum20": 38.0,
+   "r1": 3.86,
+   "at_limit_up": false,
+   "ltsz": 711.6,
+   "actual": 0.65,
+   "hit": true
+  },
+  {
+   "code": "sz000703",
+   "name": "恒逸石化",
+   "rank": 5,
+   "momentum20": 37.52,
+   "r1": 2.65,
+   "at_limit_up": false,
+   "ltsz": 641.1,
+   "actual": -2.0,
+   "hit": false
+  },
+  {
+   "code": "sh600489",
+   "name": "中金黄金",
+   "rank": 6,
+   "momentum20": 36.18,
+   "r1": 2.03,
+   "at_limit_up": false,
+   "ltsz": 1235.1,
+   "actual": 2.49,
+   "hit": true
+  },
+  {
+   "code": "sh600988",
+   "name": "赤峰黄金",
+   "rank": 7,
+   "momentum20": 35.26,
+   "r1": 3.9,
+   "at_limit_up": false,
+   "ltsz": 678.5,
+   "actual": 1.69,
+   "hit": true
+  },
+  {
+   "code": "sh603259",
+   "name": "药明康德",
+   "rank": 8,
+   "momentum20": 34.18,
+   "r1": 4.21,
+   "at_limit_up": false,
+   "ltsz": 4127.7,
+   "actual": -0.73,
+   "hit": false
+  },
+  {
+   "code": "sz000426",
+   "name": "兴业银锡",
+   "rank": 9,
+   "momentum20": 33.56,
+   "r1": 3.01,
+   "at_limit_up": false,
+   "ltsz": 700.9,
+   "actual": 3.56,
+   "hit": true
+  },
+  {
+   "code": "sz000408",
+   "name": "藏格矿业",
+   "rank": 10,
+   "momentum20": 32.44,
+   "r1": -0.89,
+   "at_limit_up": false,
+   "ltsz": 1245.9,
+   "actual": -1.49,
+   "hit": false
+  },
+  {
+   "code": "sh600547",
+   "name": "山东黄金",
+   "rank": 11,
+   "momentum20": 31.34,
+   "r1": 3.25,
+   "at_limit_up": false,
+   "ltsz": 1088.0,
+   "actual": 3.23,
+   "hit": true
+  },
+  {
+   "code": "sz000831",
+   "name": "中国稀土",
+   "rank": 12,
+   "momentum20": 29.75,
+   "r1": 2.05,
+   "at_limit_up": false,
+   "ltsz": 666.3,
+   "actual": 1.33,
+   "hit": true
+  },
+  {
+   "code": "sh601899",
+   "name": "紫金矿业",
+   "rank": 13,
+   "momentum20": 29.57,
+   "r1": 0.85,
+   "at_limit_up": false,
+   "ltsz": 6872.8,
+   "actual": 1.21,
+   "hit": true
+  },
+  {
+   "code": "sh600219",
+   "name": "南山铝业",
+   "rank": 14,
+   "momentum20": 27.74,
+   "r1": 3.72,
+   "at_limit_up": false,
+   "ltsz": 558.1,
+   "actual": 1.84,
+   "hit": true
+  },
+  {
+   "code": "sh601233",
+   "name": "桐昆股份",
+   "rank": 15,
+   "momentum20": 26.36,
+   "r1": 3.57,
+   "at_limit_up": false,
+   "ltsz": 556.9,
+   "actual": -2.34,
+   "hit": false
+  },
+  {
+   "code": "sz300058",
+   "name": "蓝色光标",
+   "rank": 16,
+   "momentum20": 25.82,
+   "r1": 1.26,
+   "at_limit_up": false,
+   "ltsz": 535.6,
+   "actual": 1.86,
+   "hit": true
+  },
+  {
+   "code": "sz002532",
+   "name": "天山铝业",
+   "rank": 17,
+   "momentum20": 25.13,
+   "r1": 2.88,
+   "at_limit_up": false,
+   "ltsz": 556.5,
+   "actual": 3.41,
+   "hit": true
+  },
+  {
+   "code": "sh601600",
+   "name": "中国铝业",
+   "rank": 18,
+   "momentum20": 24.36,
+   "r1": 2.06,
+   "at_limit_up": false,
+   "ltsz": 1259.6,
+   "actual": 1.24,
+   "hit": true
+  },
+  {
+   "code": "sz002493",
+   "name": "荣盛石化",
+   "rank": 19,
+   "momentum20": 24.15,
+   "r1": 2.19,
+   "at_limit_up": false,
+   "ltsz": 1192.5,
+   "actual": 0.15,
+   "hit": true
+  },
+  {
+   "code": "sh601061",
+   "name": "中信金属",
+   "rank": 20,
+   "momentum20": 23.76,
+   "r1": 3.29,
+   "at_limit_up": false,
+   "ltsz": 589.5,
+   "actual": -1.15,
+   "hit": false
+  }
+ ]
+}
