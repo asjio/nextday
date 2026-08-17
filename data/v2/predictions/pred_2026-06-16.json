@@ -1,0 +1,17 @@
+{
+ "version": "v2",
+ "backfilled": true,
+ "trade_date": "2026-06-16",
+ "gate_open": false,
+ "gate_closed_reason": "市场宽度不足: 上涨占比37% < 55%",
+ "market": {
+  "market_state": "range",
+  "index_close": 4091.892,
+  "ma_gate": 4033.8978,
+  "breadth": 0.37,
+  "breadth_th": 0.55
+ },
+ "buy_date": "2026-06-17",
+ "sell_date": "2026-06-18",
+ "predictions": []
+}
