@@ -1,0 +1,237 @@
+{
+ "version": "v2",
+ "backfilled": true,
+ "trade_date": "2026-06-15",
+ "strategy": "动量20日 + 指数MA10闸门",
+ "gate_open": true,
+ "market": {
+  "market_state": "range",
+  "index_close": 4096.472,
+  "ma20": 4032.2188
+ },
+ "buy_date": "2026-06-16",
+ "sell_date": "2026-06-17",
+ "validated": true,
+ "predictions": [
+  {
+   "code": "sz000636",
+   "name": "风华高科",
+   "rank": 1,
+   "momentum20": 121.37,
+   "r1": 10.01,
+   "at_limit_up": true,
+   "ltsz": 734.0,
+   "actual": 4.89,
+   "hit": true
+  },
+  {
+   "code": "sz301217",
+   "name": "铜冠铜箔",
+   "rank": 2,
+   "momentum20": 95.34,
+   "r1": 20.0,
+   "at_limit_up": true,
+   "ltsz": 1096.1,
+   "actual": 1.98,
+   "hit": true
+  },
+  {
+   "code": "sz301526",
+   "name": "国际复材",
+   "rank": 3,
+   "momentum20": 82.6,
+   "r1": 20.02,
+   "at_limit_up": true,
+   "ltsz": 540.0,
+   "actual": 4.01,
+   "hit": true
+  },
+  {
+   "code": "sh603256",
+   "name": "宏和科技",
+   "rank": 4,
+   "momentum20": 74.02,
+   "r1": 10.0,
+   "at_limit_up": true,
+   "ltsz": 1415.8,
+   "actual": 2.92,
+   "hit": true
+  },
+  {
+   "code": "sz300408",
+   "name": "三环集团",
+   "rank": 5,
+   "momentum20": 70.93,
+   "r1": 18.77,
+   "at_limit_up": false,
+   "ltsz": 2433.6,
+   "actual": 3.49,
+   "hit": true
+  },
+  {
+   "code": "sh600183",
+   "name": "生益科技",
+   "rank": 6,
+   "momentum20": 69.55,
+   "r1": 10.0,
+   "at_limit_up": true,
+   "ltsz": 3484.7,
+   "actual": 0.42,
+   "hit": true
+  },
+  {
+   "code": "sz002484",
+   "name": "江海股份",
+   "rank": 7,
+   "momentum20": 63.35,
+   "r1": 6.74,
+   "at_limit_up": false,
+   "ltsz": 573.9,
+   "actual": 9.99,
+   "hit": true
+  },
+  {
+   "code": "sz300285",
+   "name": "国瓷材料",
+   "rank": 8,
+   "momentum20": 63.14,
+   "r1": 12.37,
+   "at_limit_up": false,
+   "ltsz": 627.6,
+   "actual": 16.42,
+   "hit": true
+  },
+  {
+   "code": "sh600378",
+   "name": "昊华科技",
+   "rank": 9,
+   "momentum20": 60.69,
+   "r1": -1.54,
+   "at_limit_up": false,
+   "ltsz": 539.3,
+   "actual": 10.0,
+   "hit": true
+  },
+  {
+   "code": "sz000657",
+   "name": "中钨高新",
+   "rank": 10,
+   "momentum20": 52.78,
+   "r1": 10.03,
+   "at_limit_up": true,
+   "ltsz": 1024.5,
+   "actual": -3.22,
+   "hit": false
+  },
+  {
+   "code": "sz300666",
+   "name": "江丰电子",
+   "rank": 11,
+   "momentum20": 46.16,
+   "r1": 7.12,
+   "at_limit_up": false,
+   "ltsz": 596.6,
+   "actual": 0.65,
+   "hit": true
+  },
+  {
+   "code": "sz000725",
+   "name": "京东方Ａ",
+   "rank": 12,
+   "momentum20": 41.17,
+   "r1": 6.35,
+   "at_limit_up": false,
+   "ltsz": 2150.3,
+   "actual": 10.09,
+   "hit": true
+  },
+  {
+   "code": "sz301200",
+   "name": "大族数控",
+   "rank": 13,
+   "momentum20": 40.96,
+   "r1": 9.89,
+   "at_limit_up": false,
+   "ltsz": 1279.5,
+   "actual": 0.64,
+   "hit": true
+  },
+  {
+   "code": "sh600487",
+   "name": "亨通光电",
+   "rank": 14,
+   "momentum20": 38.42,
+   "r1": 2.36,
+   "at_limit_up": false,
+   "ltsz": 1596.3,
+   "actual": 3.26,
+   "hit": true
+  },
+  {
+   "code": "sh600160",
+   "name": "巨化股份",
+   "rank": 15,
+   "momentum20": 38.29,
+   "r1": 9.91,
+   "at_limit_up": true,
+   "ltsz": 1102.6,
+   "actual": 2.14,
+   "hit": true
+  },
+  {
+   "code": "sh600176",
+   "name": "中国巨石",
+   "rank": 16,
+   "momentum20": 34.82,
+   "r1": 10.0,
+   "at_limit_up": true,
+   "ltsz": 1839.6,
+   "actual": 9.99,
+   "hit": true
+  },
+  {
+   "code": "sh600549",
+   "name": "厦门钨业",
+   "rank": 17,
+   "momentum20": 34.34,
+   "r1": 10.0,
+   "at_limit_up": true,
+   "ltsz": 907.5,
+   "actual": 3.1,
+   "hit": true
+  },
+  {
+   "code": "sh601958",
+   "name": "金钼股份",
+   "rank": 18,
+   "momentum20": 30.77,
+   "r1": 10.15,
+   "at_limit_up": true,
+   "ltsz": 740.5,
+   "actual": -1.44,
+   "hit": false
+  },
+  {
+   "code": "sh603986",
+   "name": "兆易创新",
+   "rank": 19,
+   "momentum20": 29.74,
+   "r1": 7.59,
+   "at_limit_up": false,
+   "ltsz": 2968.1,
+   "actual": 10.0,
+   "hit": true
+  },
+  {
+   "code": "sz300373",
+   "name": "扬杰科技",
+   "rank": 20,
+   "momentum20": 29.18,
+   "r1": 8.76,
+   "at_limit_up": false,
+   "ltsz": 541.0,
+   "actual": 4.87,
+   "hit": true
+  }
+ ]
+}
