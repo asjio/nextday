@@ -1,0 +1,205 @@
+{
+ "version": "v2",
+ "strategy": "动量20日 + 防守闸门(指数MA10 + 宽度55%)",
+ "trade_date": "2026-08-17",
+ "target_date": "2026-08-18",
+ "buy_date": "2026-08-18",
+ "sell_date": "2026-08-19",
+ "gate_open": true,
+ "market": {
+  "gate_open": true,
+  "index_gate": true,
+  "market_state": "range",
+  "index_date": "2026-08-17",
+  "index_close": 3982.654,
+  "ma_gate": 3922.5261000000005,
+  "ret_long": 0.19216616222950544,
+  "breadth": 0.7267,
+  "breadth_th": 0.55
+ },
+ "n_pool": 300,
+ "n_kline_ok": 300,
+ "predictions": [
+  {
+   "code": "sz002428",
+   "name": "云南锗业",
+   "rank": 1,
+   "momentum20": 62.32,
+   "r1": 7.93,
+   "at_limit_up": false,
+   "ltsz": 716.0
+  },
+  {
+   "code": "sh603156",
+   "name": "养元饮品",
+   "rank": 2,
+   "momentum20": 58.4,
+   "r1": 3.19,
+   "at_limit_up": false,
+   "ltsz": 672.4
+  },
+  {
+   "code": "sz300620",
+   "name": "光库科技",
+   "rank": 3,
+   "momentum20": 52.58,
+   "r1": 1.49,
+   "at_limit_up": false,
+   "ltsz": 807.3
+  },
+  {
+   "code": "sz000636",
+   "name": "风华高科",
+   "rank": 4,
+   "momentum20": 51.48,
+   "r1": 1.13,
+   "at_limit_up": false,
+   "ltsz": 734.0
+  },
+  {
+   "code": "sz300285",
+   "name": "国瓷材料",
+   "rank": 5,
+   "momentum20": 47.38,
+   "r1": 3.68,
+   "at_limit_up": false,
+   "ltsz": 627.6
+  },
+  {
+   "code": "sz000426",
+   "name": "兴业银锡",
+   "rank": 6,
+   "momentum20": 46.6,
+   "r1": 4.2,
+   "at_limit_up": false,
+   "ltsz": 700.9
+  },
+  {
+   "code": "sz002353",
+   "name": "杰瑞股份",
+   "rank": 7,
+   "momentum20": 44.72,
+   "r1": 10.0,
+   "at_limit_up": true,
+   "ltsz": 1147.8
+  },
+  {
+   "code": "sz301526",
+   "name": "国际复材",
+   "rank": 8,
+   "momentum20": 44.01,
+   "r1": 3.39,
+   "at_limit_up": false,
+   "ltsz": 540.0
+  },
+  {
+   "code": "sz301165",
+   "name": "锐捷网络",
+   "rank": 9,
+   "momentum20": 43.76,
+   "r1": 2.85,
+   "at_limit_up": false,
+   "ltsz": 1648.2
+  },
+  {
+   "code": "sz300408",
+   "name": "三环集团",
+   "rank": 10,
+   "momentum20": 42.99,
+   "r1": 0.82,
+   "at_limit_up": false,
+   "ltsz": 2433.6
+  },
+  {
+   "code": "sz300548",
+   "name": "长芯博创",
+   "rank": 11,
+   "momentum20": 42.81,
+   "r1": 12.5,
+   "at_limit_up": false,
+   "ltsz": 644.3
+  },
+  {
+   "code": "sz300757",
+   "name": "罗博特科",
+   "rank": 12,
+   "momentum20": 42.32,
+   "r1": 2.91,
+   "at_limit_up": false,
+   "ltsz": 863.2
+  },
+  {
+   "code": "sz000975",
+   "name": "山金国际",
+   "rank": 13,
+   "momentum20": 41.68,
+   "r1": 4.46,
+   "at_limit_up": false,
+   "ltsz": 679.3
+  },
+  {
+   "code": "sz000960",
+   "name": "锡业股份",
+   "rank": 14,
+   "momentum20": 36.12,
+   "r1": 2.59,
+   "at_limit_up": false,
+   "ltsz": 651.8
+  },
+  {
+   "code": "sz300666",
+   "name": "江丰电子",
+   "rank": 15,
+   "momentum20": 35.59,
+   "r1": 5.44,
+   "at_limit_up": false,
+   "ltsz": 596.6
+  },
+  {
+   "code": "sh603228",
+   "name": "景旺电子",
+   "rank": 16,
+   "momentum20": 35.0,
+   "r1": -1.1,
+   "at_limit_up": false,
+   "ltsz": 951.8
+  },
+  {
+   "code": "sz300759",
+   "name": "康龙化成",
+   "rank": 17,
+   "momentum20": 34.42,
+   "r1": 2.02,
+   "at_limit_up": false,
+   "ltsz": 711.6
+  },
+  {
+   "code": "sh603259",
+   "name": "药明康德",
+   "rank": 18,
+   "momentum20": 34.35,
+   "r1": 4.8,
+   "at_limit_up": false,
+   "ltsz": 4127.7
+  },
+  {
+   "code": "sz300394",
+   "name": "天孚通信",
+   "rank": 19,
+   "momentum20": 34.19,
+   "r1": 7.04,
+   "at_limit_up": false,
+   "ltsz": 3118.9
+  },
+  {
+   "code": "sh600601",
+   "name": "方正科技",
+   "rank": 20,
+   "momentum20": 33.64,
+   "r1": 2.61,
+   "at_limit_up": false,
+   "ltsz": 541.7
+  }
+ ],
+ "gate_closed_reason": null
+}
