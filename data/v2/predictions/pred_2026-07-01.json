@@ -1,0 +1,237 @@
+{
+ "version": "v2",
+ "backfilled": true,
+ "trade_date": "2026-07-01",
+ "strategy": "动量20日 + 指数MA10闸门",
+ "gate_open": true,
+ "market": {
+  "market_state": "range",
+  "index_close": 4112.445,
+  "ma20": 4100.7009
+ },
+ "buy_date": "2026-07-02",
+ "sell_date": "2026-07-03",
+ "validated": true,
+ "predictions": [
+  {
+   "code": "sz301526",
+   "name": "国际复材",
+   "rank": 1,
+   "momentum20": 101.77,
+   "r1": 0.17,
+   "at_limit_up": false,
+   "ltsz": 540.0,
+   "actual": 3.98,
+   "hit": true
+  },
+  {
+   "code": "sz300666",
+   "name": "江丰电子",
+   "rank": 2,
+   "momentum20": 88.48,
+   "r1": 6.98,
+   "at_limit_up": false,
+   "ltsz": 596.6,
+   "actual": -3.0,
+   "hit": false
+  },
+  {
+   "code": "sh600378",
+   "name": "昊华科技",
+   "rank": 3,
+   "momentum20": 88.29,
+   "r1": 7.46,
+   "at_limit_up": false,
+   "ltsz": 539.3,
+   "actual": -7.5,
+   "hit": false
+  },
+  {
+   "code": "sz300223",
+   "name": "君正股份",
+   "rank": 4,
+   "momentum20": 82.08,
+   "r1": 4.08,
+   "at_limit_up": false,
+   "ltsz": 657.2,
+   "actual": 10.61,
+   "hit": true
+  },
+  {
+   "code": "sh600176",
+   "name": "中国巨石",
+   "rank": 5,
+   "momentum20": 80.64,
+   "r1": -3.58,
+   "at_limit_up": false,
+   "ltsz": 1839.6,
+   "actual": 4.54,
+   "hit": true
+  },
+  {
+   "code": "sz300475",
+   "name": "香农芯创",
+   "rank": 6,
+   "momentum20": 72.77,
+   "r1": 0.84,
+   "at_limit_up": false,
+   "ltsz": 774.0,
+   "actual": 0.84,
+   "hit": true
+  },
+  {
+   "code": "sz300285",
+   "name": "国瓷材料",
+   "rank": 7,
+   "momentum20": 69.07,
+   "r1": -4.23,
+   "at_limit_up": false,
+   "ltsz": 627.6,
+   "actual": -2.22,
+   "hit": false
+  },
+  {
+   "code": "sz000021",
+   "name": "深科技",
+   "rank": 8,
+   "momentum20": 68.45,
+   "r1": -3.13,
+   "at_limit_up": false,
+   "ltsz": 670.6,
+   "actual": -0.21,
+   "hit": false
+  },
+  {
+   "code": "sh603986",
+   "name": "兆易创新",
+   "rank": 9,
+   "momentum20": 62.63,
+   "r1": -5.27,
+   "at_limit_up": false,
+   "ltsz": 2968.1,
+   "actual": -2.45,
+   "hit": false
+  },
+  {
+   "code": "sz300567",
+   "name": "精测电子",
+   "rank": 10,
+   "momentum20": 62.36,
+   "r1": -4.4,
+   "at_limit_up": false,
+   "ltsz": 546.0,
+   "actual": -2.23,
+   "hit": false
+  },
+  {
+   "code": "sz000725",
+   "name": "京东方Ａ",
+   "rank": 11,
+   "momentum20": 61.99,
+   "r1": 1.04,
+   "at_limit_up": false,
+   "ltsz": 2150.3,
+   "actual": -7.91,
+   "hit": false
+  },
+  {
+   "code": "sh600460",
+   "name": "士兰微",
+   "rank": 12,
+   "momentum20": 61.06,
+   "r1": -2.77,
+   "at_limit_up": false,
+   "ltsz": 566.6,
+   "actual": -6.45,
+   "hit": false
+  },
+  {
+   "code": "sz300604",
+   "name": "长川科技",
+   "rank": 13,
+   "momentum20": 60.79,
+   "r1": -2.27,
+   "at_limit_up": false,
+   "ltsz": 1481.0,
+   "actual": 0.41,
+   "hit": true
+  },
+  {
+   "code": "sz301217",
+   "name": "铜冠铜箔",
+   "rank": 14,
+   "momentum20": 59.07,
+   "r1": -0.14,
+   "at_limit_up": false,
+   "ltsz": 1096.1,
+   "actual": -2.08,
+   "hit": false
+  },
+  {
+   "code": "sz002371",
+   "name": "北方华创",
+   "rank": 15,
+   "momentum20": 55.24,
+   "r1": 5.75,
+   "at_limit_up": false,
+   "ltsz": 5554.1,
+   "actual": -2.98,
+   "hit": false
+  },
+  {
+   "code": "sh600549",
+   "name": "厦门钨业",
+   "rank": 16,
+   "momentum20": 53.22,
+   "r1": -0.35,
+   "at_limit_up": false,
+   "ltsz": 907.5,
+   "actual": -8.64,
+   "hit": false
+  },
+  {
+   "code": "sz300373",
+   "name": "扬杰科技",
+   "rank": 17,
+   "momentum20": 49.75,
+   "r1": -3.33,
+   "at_limit_up": false,
+   "ltsz": 541.0,
+   "actual": -4.52,
+   "hit": false
+  },
+  {
+   "code": "sz300054",
+   "name": "鼎龙股份",
+   "rank": 18,
+   "momentum20": 48.95,
+   "r1": -5.35,
+   "at_limit_up": false,
+   "ltsz": 605.1,
+   "actual": -3.74,
+   "hit": false
+  },
+  {
+   "code": "sh600160",
+   "name": "巨化股份",
+   "rank": 19,
+   "momentum20": 47.56,
+   "r1": 5.36,
+   "at_limit_up": false,
+   "ltsz": 1102.6,
+   "actual": -9.99,
+   "hit": false
+  },
+  {
+   "code": "sz001309",
+   "name": "德明利",
+   "rank": 20,
+   "momentum20": 47.42,
+   "r1": -5.27,
+   "at_limit_up": false,
+   "ltsz": 718.5,
+   "actual": 8.74,
+   "hit": true
+  }
+ ]
+}
