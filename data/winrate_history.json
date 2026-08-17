@@ -262,5 +262,49 @@
     "actual": 2.12
    }
   ]
+ },
+ {
+  "pred_date": "2026-08-14",
+  "target_date": "2026-08-17",
+  "n": 196,
+  "hit_rate": 0.7398,
+  "avg_actual": 2.179,
+  "top12_hit_rate": 0.6667,
+  "top12_avg": 3.614,
+  "high_conf_n": 3,
+  "high_conf_hit_rate": 1.0,
+  "high_conf_avg": 7.523,
+  "top5": [
+   {
+    "code": "603118",
+    "name": "共进股份",
+    "p_up": 0.7,
+    "actual": 10.02
+   },
+   {
+    "code": "600198",
+    "name": "大唐电信",
+    "p_up": 0.7,
+    "actual": 3.32
+   },
+   {
+    "code": "600186",
+    "name": "莲花控股",
+    "p_up": 0.7,
+    "actual": 9.23
+   },
+   {
+    "code": "301043",
+    "name": "绿岛风",
+    "p_up": 0.683,
+    "actual": 1.7
+   },
+   {
+    "code": "002907",
+    "name": "华森制药",
+    "p_up": 0.683,
+    "actual": 10.03
+   }
+  ]
  }
 ]
