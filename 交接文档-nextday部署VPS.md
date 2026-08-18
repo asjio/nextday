@@ -82,7 +82,11 @@ auth.log 显示该 IP 上线1小时即遭多个境外IP持续暴力破解。
 1. 安全加固(最优先)
    - 先用 `ss -tlnp | grep 23456` 确认未被占用, 再改 SSH 端口到 23456: 改 `/etc/ssh/sshd_config` 的 Port, **同步改** `/lib/systemd/system/ssh.socket`,
      然后 `systemctl daemon-reload && systemctl restart ssh.socket`
+   - 操作纪律(防锁死,必须遵守): 改完端口后先用新端口 `ssh -p 23456 root@<IP>` 验证能连上,
+     确认成功后才允许关闭旧的22端口监听。顺序反了会被锁在门外, 只能重新走SolusVM面板的noVNC
    - 配置密钥登录, 禁用 root 密码登录, 装 fail2ban
+   - 密钥登录纪律: 公钥写入 `/root/.ssh/authorized_keys` 后, 必须先新开一个终端用密钥+新端口
+     完整登录一次成功, 再改 sshd_config 禁密码登录。没验证就禁密码 = 锁死
 2. 数据源可达性测试(决定是否需要数据搬运模式的兜底方案)
    ```
    curl -s -o /dev/null -w "%{http_code}" "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh000001,day,,,5,qfq"
