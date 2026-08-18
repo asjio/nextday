@@ -267,7 +267,7 @@ footer { text-align:center; color:var(--ink-faint); font-size:11px; padding:28px
 <div class="wrap">
   <header>
     <h1 class="font-display">NextDay v2 动量选股台账</h1>
-    <p class="sub">动量20日选股 · 防守闸门(指数MA10 + 市场宽度55%) · 买入日临近收盘买入 / 卖出日收盘卖出 · 逐日实测对账</p>
+    <p class="sub">动量20日选股 · 复合情绪闸门(指数MA10 + 市场宽度55% + 涨停家数>8) · 买入日临近收盘买入 / 卖出日收盘卖出 · 逐日实测对账</p>
   </header>
 
   <div id="gate"></div>
@@ -323,7 +323,7 @@ footer { text-align:center; color:var(--ink-faint); font-size:11px; padding:28px
     </table></div>
   </section>
 
-  <footer>防守型策略: 市场不好时空仓不参与, 牺牲信号频率换胜率 · 概率预测非投资建议 · 数据源: 腾讯/新浪财经</footer>
+  <footer>防守型策略: 市场情绪不足时空仓不参与, 牺牲信号频率换胜率(回测信号约每月1次) · 概率预测非投资建议 · 数据源: 腾讯/新浪财经</footer>
 </div>
 
 <script>
@@ -357,7 +357,7 @@ async function load() {
   const g = ov.latest_gate;
   if (g) {
     const mk = g.market || {};
-    const meta = `指数 ${mk.index_close ? mk.index_close.toFixed(0) : '-'} / MA10 ${mk.ma_gate ? mk.ma_gate.toFixed(0) : '-'} / 上涨占比 ${mk.breadth != null ? (mk.breadth*100).toFixed(0)+'%' : '-'}`;
+    const meta = `指数 ${mk.index_close ? mk.index_close.toFixed(0) : '-'} / MA10 ${mk.ma_gate ? mk.ma_gate.toFixed(0) : '-'} / 上涨占比 ${mk.breadth != null ? (mk.breadth*100).toFixed(0)+'%' : '-'} / 涨停 ${mk.zt_count != null ? mk.zt_count : '-'}家`;
     if (g.gate_open) {
       $('#gate').innerHTML = `<div class="banner open"><span class="tag">闸门: 开</span>
         <span>${g.date} 出信号 · 买入 <b>${g.buy_date}</b> 临近收盘 · 卖出 <b>${g.sell_date}</b> 收盘</span>
@@ -447,6 +447,7 @@ async function setDate(d) {
   const meta = [];
   meta.push(`买入 <b>${p.buy_date || '-'}</b> 临近收盘 / 卖出 <b>${p.sell_date || '-'}</b> 收盘`);
   if (mk.breadth != null) meta.push(`当日上涨占比 ${(mk.breadth*100).toFixed(0)}%`);
+  if (mk.zt_count != null) meta.push(`当日涨停 ${mk.zt_count}家`);
   meta.push(p.validated ? '<span class="tag-hit">已对账</span>' : '<span style="color:var(--ink-faint)">待卖出日收盘后对账</span>');
   if (p.gate_open === false) {
     $('#daymeta').innerHTML = `<span class="tag-miss">空仓</span> ${p.gate_closed_reason || ''}`;
