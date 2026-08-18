@@ -23,6 +23,13 @@ def main():
     klines = {k: v for k, v in cache["klines"].items() if v and len(v) >= config.MIN_KLINE}
     print(f"缓存股票: {len(klines)}只", flush=True)
 
+    # 盘中保护: 15:05前运行时剥离今天未收盘的数据(宽度/涨停家数按残缺数据算会失真)
+    import datetime as _dt
+    today = _dt.date.today().isoformat()
+    if _dt.datetime.now().strftime("%H%M") < "1505":
+        klines = {c: [r for r in rows if r[0] != today] for c, rows in klines.items()}
+        print("盘中运行: 已剥离今日未收盘数据", flush=True)
+
     pool = fetch_pool(config.POOL_SIZE)
     names = {c: nm for c, nm, _ in pool}
     ltsz = {c: sz for c, _, sz in pool}
@@ -50,16 +57,21 @@ def main():
     for i in range(1, n):
         if np.isnan(ic[i]):
             ic[i] = ic[i - 1]
-    # 市场宽度: 与engine一致口径(对齐到t日, 分母只算两日都有数据的股票)
+    # 市场宽度 + 涨停家数: 与engine一致口径
     breadth = np.full(n, np.nan)
+    zt_count = np.full(n, np.nan)
+    lim_th = np.array([0.195 if c[-6:].startswith(("30", "68")) else 0.095
+                       for c in codes])
     for i in range(1, n):
         valid = ~np.isnan(M[i]) & ~np.isnan(M[i - 1])
         breadth[i] = np.nanmean(np.where(valid, M[i] > M[i - 1], np.nan))
+        r1i = M[i] / M[i - 1] - 1
+        zt_count[i] = int((valid & (r1i >= lim_th)).sum())
 
     records = []
     for t in signal_days:
         td = all_dates[t]
-        # 闸门: 指数>MA10 且 非熊市 且 市场宽度>=55%
+        # 闸门: 指数>MA10 且 非熊市 且 宽度>=55% 且 涨停家数>8 (复合情绪)
         ma = np.mean(ic[t - config.GATE_MA + 1:t + 1])
         ret_long = ic[t] / ic[0] - 1
         if ret_long > config.BULL_TH:
@@ -69,7 +81,8 @@ def main():
         else:
             state = "range"
         idx_gate = bool(ic[t] > ma) and state != "bear"
-        gate_open = idx_gate and float(breadth[t]) >= config.BREADTH_TH
+        gate_open = (idx_gate and float(breadth[t]) >= config.BREADTH_TH
+                     and zt_count[t] > config.ZT_COUNT_TH)
 
         pred_path = os.path.join(config.PRED_DIR, f"pred_{td}.json")
         detail_path = os.path.join(config.PRED_DIR, f"detail_{td}.json")
@@ -85,9 +98,14 @@ def main():
                 pass
 
         if not gate_open:
-            reason = ("熊市环境强制空仓" if state == "bear"
-                      else (f"指数{ic[t]:.0f}跌破MA{config.GATE_MA}({ma:.0f})" if not idx_gate
-                            else f"市场宽度不足: 上涨占比{float(breadth[t]):.0%} < {config.BREADTH_TH:.0%}"))
+            if state == "bear":
+                reason = "熊市环境强制空仓"
+            elif not idx_gate:
+                reason = f"指数{ic[t]:.0f}跌破MA{config.GATE_MA}({ma:.0f})"
+            elif float(breadth[t]) < config.BREADTH_TH:
+                reason = f"市场宽度不足: 上涨占比{float(breadth[t]):.0%} < {config.BREADTH_TH:.0%}"
+            else:
+                reason = f"资金进攻不足: 池内涨停{int(zt_count[t])}家 <= {config.ZT_COUNT_TH}家"
             rec = {"pred_date": td, "target_date": all_dates[t + 2] if t + 2 < n else None,
                    "gate_open": False, "n": 0, "hit_rate": None, "avg_actual": None}
             records.append(rec)
@@ -96,7 +114,8 @@ def main():
                     "gate_closed_reason": reason,
                     "market": {"market_state": state, "index_close": float(ic[t]),
                                "ma_gate": float(ma), "breadth": float(breadth[t]),
-                               "breadth_th": config.BREADTH_TH},
+                               "breadth_th": config.BREADTH_TH,
+                               "zt_count": int(zt_count[t]), "zt_count_th": config.ZT_COUNT_TH},
                     "buy_date": all_dates[t + 1] if t + 1 < n else None,
                     "sell_date": all_dates[t + 2] if t + 2 < n else None,
                     "predictions": []}
@@ -148,9 +167,12 @@ def main():
         }
         records.append(rec)
         pred = {"version": "v2", "backfilled": True, "trade_date": td,
-                "strategy": f"动量{config.MOM_WINDOW}日 + 指数MA{config.GATE_MA}闸门",
+                "strategy": (f"动量{config.MOM_WINDOW}日 + 复合情绪闸门"
+                             f"(指数MA{config.GATE_MA} + 宽度{config.BREADTH_TH:.0%} + 涨停>{config.ZT_COUNT_TH}家)"),
                 "gate_open": True, "market": {"market_state": state,
-                "index_close": float(ic[t]), "ma20": float(ma)},
+                "index_close": float(ic[t]), "ma_gate": float(ma),
+                "breadth": float(breadth[t]), "breadth_th": config.BREADTH_TH,
+                "zt_count": int(zt_count[t]), "zt_count_th": config.ZT_COUNT_TH},
                 "buy_date": all_dates[t + 1], "sell_date": all_dates[t + 2],
                 "validated": True, "predictions": preds}
         json.dump(pred, open(pred_path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
