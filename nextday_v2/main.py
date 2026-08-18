@@ -67,6 +67,17 @@ def main():
             print(f"{p['rank']:<4}{p['code'][-6:]:<8}{p['name']:<10}"
                   f"{p['momentum20']:>+8.1f}%{p['r1']:>+8.1f}%{p['ltsz']:>8.0f}{mark}", flush=True)
 
+    # 3. 回测(用每日更新的K线缓存, 随数据自动延伸), 失败不影响主流程
+    try:
+        from .backtest import run_backtest
+        bt = run_backtest()
+        t20 = bt["topn"].get("20", {})
+        print(f"[回测] {bt['data_range'][0]}~{bt['data_range'][1]} "
+              f"{bt['n_signals']}信号日 Top20胜率{t20.get('win_rate', 0)*100:.0f}% "
+              f"日均{t20.get('avg_ret', 0):+.2f}% 累计{t20.get('cum_ret', 0):+.1f}%", flush=True)
+    except Exception as e:
+        print(f"[回测] 跳过: {type(e).__name__}: {e}", flush=True)
+
     print("===== 完成 =====", flush=True)
 
 
