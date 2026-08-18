@@ -70,7 +70,7 @@ TCP能连但在SSH banner阶段被reset。办公网永远连不上这台VPS的SS
 
 ### 安全状况(紧急)
 auth.log 显示该 IP 上线1小时即遭多个境外IP持续暴力破解。
-部署完成后必须: 改SSH端口(建议443) + 密钥登录 + 禁root密码登录 + fail2ban。
+部署完成后必须: 改SSH端口(23456) + 密钥登录 + 禁root密码登录 + fail2ban。
 密码曾在聊天中明文出现, 必须全部改掉(root密码 + SolusVM面板密码)。
 
 ---
@@ -80,7 +80,7 @@ auth.log 显示该 IP 上线1小时即遭多个境外IP持续暴力破解。
 前提: 用户在家庭网络下, 已能 SSH 登录。
 
 1. 安全加固(最优先)
-   - 改 SSH 端口到 443: 改 `/etc/ssh/sshd_config` 的 Port, **同步改** `/lib/systemd/system/ssh.socket`,
+   - 先用 `ss -tlnp | grep 23456` 确认未被占用, 再改 SSH 端口到 23456: 改 `/etc/ssh/sshd_config` 的 Port, **同步改** `/lib/systemd/system/ssh.socket`,
      然后 `systemctl daemon-reload && systemctl restart ssh.socket`
    - 配置密钥登录, 禁用 root 密码登录, 装 fail2ban
 2. 数据源可达性测试(决定是否需要数据搬运模式的兜底方案)
