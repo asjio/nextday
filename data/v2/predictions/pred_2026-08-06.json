@@ -8,8 +8,10 @@
   "market_state": "range",
   "index_close": 3900.352,
   "ma_gate": 3836.1911999999998,
-  "breadth": 0.4866666666666667,
-  "breadth_th": 0.55
+  "breadth": 0.4919614147909968,
+  "breadth_th": 0.55,
+  "zt_count": 6,
+  "zt_count_th": 8
  },
  "buy_date": "2026-08-07",
  "sell_date": "2026-08-10",
