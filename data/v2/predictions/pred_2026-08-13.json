@@ -3,13 +3,15 @@
  "backfilled": true,
  "trade_date": "2026-08-13",
  "gate_open": false,
- "gate_closed_reason": "市场宽度不足: 上涨占比29% < 55%",
+ "gate_closed_reason": "市场宽度不足: 上涨占比30% < 55%",
  "market": {
   "market_state": "range",
   "index_close": 3926.965,
   "ma_gate": 3895.7356,
-  "breadth": 0.29333333333333333,
-  "breadth_th": 0.55
+  "breadth": 0.2990353697749196,
+  "breadth_th": 0.55,
+  "zt_count": 1,
+  "zt_count_th": 8
  },
  "buy_date": "2026-08-14",
  "sell_date": "2026-08-17",
