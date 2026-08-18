@@ -97,7 +97,7 @@ auth.log 显示该 IP 上线1小时即遭多个境外IP持续暴力破解。
    - 时区设为 Asia/Shanghai(`timedatectl set-timezone Asia/Shanghai`)
 4. 部署 web 展示层
    - 上传 `nextday_v2/`(web.py/engine.py/config.py等) + `frontend/dist` + `data/v2/`
-   - 用 systemd 或 nohup 跑 `python -m nextday_v2.web`(端口8767, 可改80/443)
+   - 用 systemd unit 跑 `python -m nextday_v2.web`, **只监听 127.0.0.1:8767**, 不对外直接暴露, 由 Nginx 反代
    - 注意 web.py 的 /api/run 手动触发功能在VPS上不可用(数据源问题), 需禁用或提示
 5. 编写同步脚本(数据搬运核心, 在本地 Windows 跑)
    - 每日预测跑完后, 用 scp/rsync 上传 `data/v2/` 增量到 VPS
@@ -107,5 +107,44 @@ auth.log 显示该 IP 上线1小时即遭多个境外IP持续暴力破解。
 
 ---
 
-## 五、相关文档
+## 五、总体目标架构(定稿, 不用Docker)
+
+部署原则: 全部组件直接部署宿主机, systemd 统一管理, **不用 Docker**。
+理由: 机器配置低(1-2核/1-2GB), 服务总共就4个(xray/nginx/nextday/sshd), Docker纯属增加排查负担;
+xray 要监听443, 容器化必须用 host 网络模式, 隔离意义归零。3x-ui 官方安装方式也是直接装宿主机。
+
+```
+互联网
+  |-- 23456端口 --> sshd(管理连接)
+  |-- 443端口   --> xray(代理节点, TLS; 非节点流量 fallback 给 Nginx)
+  |-- 80端口    --> Nginx(HTTP, 301跳转到443)
+                     Nginx 反代: /nextday -> 127.0.0.1:8767(nextday台账)
+
+宿主机进程(systemd管理):
+  xray.service     (3x-ui一键脚本安装)
+  nginx.service    (apt安装)
+  nextday.service  (自建unit: python -m nextday_v2.web, 只监听127.0.0.1:8767)
+```
+
+### 端口总表
+
+| 端口 | 服务 | 说明 |
+|:-----|:-----|:-----|
+| 23456 | sshd | 管理入口, 弃用22 |
+| 443 | xray入口+网站fallback | xray听TLS, 非节点流量fallback给Nginx, 一个端口两用 |
+| 80 | nginx | 301跳443 |
+| 8767 | nextday_v2.web | 仅监听127.0.0.1, 不对外暴露 |
+| 2万+随机 | 3x-ui面板 | 装完设置强密码, 建议开面板TLS |
+
+### 关键设计原则
+
+1. SSH与节点互不冲突: SSH走23456, 节点走443, 各司其职
+2. xray与网站共用443: 靠fallback机制分流, 这是3x-ui标准玩法
+3. nextday只监听本机: 经Nginx反代暴露, 少一个攻击面
+4. 数据流(数据搬运模式): 本地Windows(Hermes cron 工作日15:30)算预测 -> scp上传 data/v2/ 到VPS -> nextday web展示。VPS上不跑数据抓取, 绕开数据源可达性问题
+5. 部署顺序铁律: 先加固(改端口23456+密钥登录+fail2ban) -> BBR -> 3x-ui节点 -> nextday -> 建站(可选)。加固没做完之前不部署任何服务
+
+---
+
+## 六、相关文档
 - 桌面《VPS搭建进度与回家操作清单.md》: VPS 基础搭建(SSH/3x-ui/建站)的完整清单, 本文档的部署任务在其之后进行
