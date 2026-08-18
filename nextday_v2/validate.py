@@ -24,14 +24,15 @@ def save_history(records):
 
 def calibrated_stats(history):
     """实测校准: 对账满CALIBRATE_MIN_DAYS天后用实测胜率/均涨替换回测值"""
+    base = {"bt_winrate": config.BT_WINRATE, "bt_avg_ret": config.BT_AVG_RET}
     done = [r for r in history if r.get("gate_open", True) and r["n"] > 0]
     if len(done) < config.CALIBRATE_MIN_DAYS:
         return {"winrate": config.BT_WINRATE, "avg_ret": config.BT_AVG_RET,
-                "calibrated": False, "n_days": len(done)}
+                "calibrated": False, "n_days": len(done), **base}
     win = sum(r["hit_rate"] * r["n"] for r in done) / sum(r["n"] for r in done)
     avg = sum(r["avg_actual"] for r in done) / len(done)
     return {"winrate": round(win, 4), "avg_ret": round(avg, 3),
-            "calibrated": True, "n_days": len(done)}
+            "calibrated": True, "n_days": len(done), **base}
 
 
 def validate_one(pred_file):
