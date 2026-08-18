@@ -306,5 +306,49 @@
     "actual": 10.03
    }
   ]
+ },
+ {
+  "pred_date": "2026-08-17",
+  "target_date": "2026-08-18",
+  "n": 201,
+  "hit_rate": 0.408,
+  "avg_actual": 0.121,
+  "top12_hit_rate": 0.6667,
+  "top12_avg": 1.671,
+  "high_conf_n": 0,
+  "high_conf_hit_rate": null,
+  "high_conf_avg": null,
+  "top5": [
+   {
+    "code": "600206",
+    "name": "有研新材",
+    "p_up": 0.683,
+    "actual": 3.33
+   },
+   {
+    "code": "003006",
+    "name": "百亚股份",
+    "p_up": 0.65,
+    "actual": 0.59
+   },
+   {
+    "code": "300570",
+    "name": "太辰光",
+    "p_up": 0.65,
+    "actual": 2.82
+   },
+   {
+    "code": "000779",
+    "name": "甘咨询",
+    "p_up": 0.633,
+    "actual": 3.39
+   },
+   {
+    "code": "603102",
+    "name": "百合股份",
+    "p_up": 0.633,
+    "actual": -4.17
+   }
+  ]
  }
 ]
