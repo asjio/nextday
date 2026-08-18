@@ -1,56 +1,5 @@
 [
  {
-  "pred_date": "2026-05-07",
-  "target_date": "2026-05-11",
-  "gate_open": true,
-  "market_state": "range",
-  "n": 20,
-  "hit_rate": 0.85,
-  "avg_actual": 5.309,
-  "top12_hit_rate": 0.75,
-  "top12_avg": 5.18,
-  "top5": [
-   {
-    "code": "301217",
-    "name": "铜冠铜箔",
-    "momentum20": 140.18,
-    "actual": -1.63
-   },
-   {
-    "code": "603256",
-    "name": "宏和科技",
-    "momentum20": 112.04,
-    "actual": 0.75
-   },
-   {
-    "code": "300857",
-    "name": "协创数据",
-    "momentum20": 92.13,
-    "actual": -0.2
-   },
-   {
-    "code": "002384",
-    "name": "东山精密",
-    "momentum20": 90.93,
-    "actual": 3.27
-   },
-   {
-    "code": "002281",
-    "name": "光迅科技",
-    "momentum20": 81.76,
-    "actual": 10.0
-   }
-  ]
- },
- {
-  "pred_date": "2026-05-08",
-  "target_date": "2026-05-12",
-  "gate_open": false,
-  "n": 0,
-  "hit_rate": null,
-  "avg_actual": null
- },
- {
   "pred_date": "2026-05-11",
   "target_date": "2026-05-13",
   "gate_open": true,
@@ -904,6 +853,14 @@
  {
   "pred_date": "2026-08-13",
   "target_date": "2026-08-17",
+  "gate_open": false,
+  "n": 0,
+  "hit_rate": null,
+  "avg_actual": null
+ },
+ {
+  "pred_date": "2026-08-14",
+  "target_date": null,
   "gate_open": false,
   "n": 0,
   "hit_rate": null,
