@@ -68,11 +68,18 @@ def analyze_market(index_rows):
     }
 
 
-def build_matrix(klines, min_len=config.MIN_KLINE):
-    """{code: rows} -> (dates, codes, M收盘价矩阵)"""
-    all_dates = sorted({r[0] for rows in klines.values() for r in rows})
-    di = {d: i for i, d in enumerate(all_dates)}
+def build_matrix(klines, min_len=config.MIN_KLINE, min_coverage=0.5):
+    """{code: rows} -> (dates, codes, M收盘价矩阵)
+    min_coverage: 当日有数据的股票占比低于此值的日期剔除(盘中未收盘的残缺行)"""
     codes = [c for c, rows in klines.items() if len(rows) >= min_len]
+    all_dates = sorted({r[0] for rows in klines.values() for r in rows})
+    # 每日覆盖率: 当日有数据的股票数 / 池内股票数, 低于阈值的日期剔除(盘中未收盘的残缺行)
+    coverage = {}
+    for c in codes:
+        for r in klines[c]:
+            coverage[r[0]] = coverage.get(r[0], 0) + 1
+    all_dates = [d for d in all_dates if coverage[d] >= len(codes) * min_coverage]
+    di = {d: i for i, d in enumerate(all_dates)}
     M = np.full((len(all_dates), len(codes)), np.nan)
     for j, c in enumerate(codes):
         for r in klines[c]:
@@ -82,23 +89,33 @@ def build_matrix(klines, min_len=config.MIN_KLINE):
 
 
 def run_predict(pool_size=config.POOL_SIZE, topn=config.TOP_N):
-    """完整预测流程 -> result dict (与老版格式兼容)"""
+    """完整预测流程 -> result dict
+    盘中保护: 15:05前运行时, 今天未收盘的K线/指数行全部剥离, 信号基于上一完整交易日"""
     pool = fetch_pool(pool_size)
     names = {c: nm for c, nm, _ in pool}
     ltsz = {c: sz for c, _, sz in pool}
     codes_all = [c for c, _, _ in pool]
 
-    index_rows = fetch_index(config.INDEX_LEN)
-    market = analyze_market(index_rows)
+    today = datetime.date.today().isoformat()
+    before_close = datetime.datetime.now().strftime("%H%M") < "1505"
 
-    # 当日K线缓存: 限流/重跑时兜底
+    index_rows = fetch_index(config.INDEX_LEN)
+    if before_close:
+        index_rows = [r for r in index_rows if r[0] != today]
+    if not index_rows:
+        raise DataError("指数数据为空")
+    last_confirmed = index_rows[-1][0]
+
+    # 当日K线缓存: 键=最后确认交易日, 限流/重跑/盘中运行复用
     cache = _load_cache()
-    cached = cache["klines"] if cache["date"] == market["index_date"] else {}
+    cached = cache["klines"] if cache.get("date") == last_confirmed else {}
     todo = [c for c in codes_all if c not in cached]
     fresh = fetch_klines(todo, config.KLINE_LEN, min_len=config.MIN_KLINE) if todo else {}
     klines = {**cached, **fresh}
+    if before_close:
+        klines = {c: [r for r in rows if r[0] != today] for c, rows in klines.items()}
     if fresh:
-        _save_cache(market["index_date"], {c: rows for c, rows in klines.items()})
+        _save_cache(last_confirmed, klines)
     if len(klines) < 50:
         raise DataError(f"K线拉取过少: 仅{len(klines)}只")
 
@@ -108,19 +125,32 @@ def run_predict(pool_size=config.POOL_SIZE, topn=config.TOP_N):
         raise DataError("K线长度不足")
     trade_date = dates[t]
 
-    # 市场宽度: 池内当日收涨家数占比 (防守闸门第二道)
+    # 指数闸门对齐到信号日(指数可能比K线多一天)
+    market = analyze_market([r for r in index_rows if r[0] <= trade_date])
+
+    # 市场宽度 + 涨停家数 (复合情绪闸门, 三条件全过才出信号)
     up = M[t] > M[t - 1]
     valid_mask = ~np.isnan(M[t]) & ~np.isnan(M[t - 1])
     breadth = float(np.nanmean(np.where(valid_mask, up, np.nan)))
+    r1_mat = np.zeros_like(M)
+    r1_mat[t] = M[t] / M[t - 1] - 1
+    lim_th = np.array([0.195 if c[-6:].startswith(("30", "68")) else 0.095
+                       for c in codes])
+    zt_count = int((valid_mask & (r1_mat[t] >= lim_th)).sum())
     market["breadth"] = round(breadth, 4)
     market["breadth_th"] = config.BREADTH_TH
-    gate_open = bool(market["index_gate"]) and breadth >= config.BREADTH_TH
+    market["zt_count"] = zt_count
+    market["zt_count_th"] = config.ZT_COUNT_TH
+    gate_open = (bool(market["index_gate"]) and breadth >= config.BREADTH_TH
+                 and zt_count > config.ZT_COUNT_TH)
     market["gate_open"] = gate_open
     if not market["index_gate"]:
         reason = ("熊市环境强制空仓" if market["market_state"] == "bear"
                   else f"指数{market['index_close']:.0f}跌破MA{config.GATE_MA}({market['ma_gate']:.0f})")
-    elif not gate_open:
+    elif breadth < config.BREADTH_TH:
         reason = f"市场宽度不足: 上涨家数占比{breadth:.0%} < {config.BREADTH_TH:.0%}"
+    elif zt_count <= config.ZT_COUNT_TH:
+        reason = f"资金进攻不足: 池内涨停{zt_count}家 <= {config.ZT_COUNT_TH}家"
     else:
         reason = None
 
@@ -146,8 +176,8 @@ def run_predict(pool_size=config.POOL_SIZE, topn=config.TOP_N):
 
     return {
         "version": "v2",
-        "strategy": (f"动量{config.MOM_WINDOW}日 + 防守闸门"
-                     f"(指数MA{config.GATE_MA} + 宽度{config.BREADTH_TH:.0%})"),
+        "strategy": (f"动量{config.MOM_WINDOW}日 + 复合情绪闸门"
+                     f"(指数MA{config.GATE_MA} + 宽度{config.BREADTH_TH:.0%} + 涨停>{config.ZT_COUNT_TH}家)"),
         "trade_date": trade_date,
         "target_date": _next_weekday(trade_date),
         "buy_date": _next_weekday(trade_date),          # t+1临近收盘买入
