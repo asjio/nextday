@@ -40,8 +40,8 @@ def main():
             if r[0] in di:
                 M[di[r[0]], j] = r[1]
 
-    # 可完整对账的信号日: t+2 <= 最后一天
-    max_t = n - 3
+    # 信号日窗口: 含最后2个未到卖出日的日期(空仓记录无需对账, UI要展示完整周)
+    max_t = n - 1
     signal_days = list(range(max(60, max_t - N_SIGNAL_DAYS + 1), max_t + 1))
     print(f"回填信号日: {all_dates[signal_days[0]]} ~ {all_dates[signal_days[-1]]} ({len(signal_days)}天)", flush=True)
 
@@ -74,11 +74,21 @@ def main():
         pred_path = os.path.join(config.PRED_DIR, f"pred_{td}.json")
         detail_path = os.path.join(config.PRED_DIR, f"detail_{td}.json")
 
+        # 已存在的实盘预测(非回填生成)不覆盖
+        if os.path.exists(pred_path):
+            try:
+                old = json.load(open(pred_path, encoding="utf-8"))
+                if not old.get("backfilled"):
+                    print(f"  {td}: 实盘预测已存在, 跳过", flush=True)
+                    continue
+            except Exception:
+                pass
+
         if not gate_open:
             reason = ("熊市环境强制空仓" if state == "bear"
                       else (f"指数{ic[t]:.0f}跌破MA{config.GATE_MA}({ma:.0f})" if not idx_gate
                             else f"市场宽度不足: 上涨占比{float(breadth[t]):.0%} < {config.BREADTH_TH:.0%}"))
-            rec = {"pred_date": td, "target_date": all_dates[t + 2],
+            rec = {"pred_date": td, "target_date": all_dates[t + 2] if t + 2 < n else None,
                    "gate_open": False, "n": 0, "hit_rate": None, "avg_actual": None}
             records.append(rec)
             pred = {"version": "v2", "backfilled": True, "trade_date": td,
@@ -87,10 +97,16 @@ def main():
                     "market": {"market_state": state, "index_close": float(ic[t]),
                                "ma_gate": float(ma), "breadth": float(breadth[t]),
                                "breadth_th": config.BREADTH_TH},
-                    "buy_date": all_dates[t + 1], "sell_date": all_dates[t + 2],
+                    "buy_date": all_dates[t + 1] if t + 1 < n else None,
+                    "sell_date": all_dates[t + 2] if t + 2 < n else None,
                     "predictions": []}
             json.dump(pred, open(pred_path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
             print(f"  {td}: 闸门关({reason}) -> 空仓", flush=True)
+            continue
+
+        # 开仓日: 必须能完整对账(卖出日已过), 否则跳过等对账
+        if t + 2 >= n:
+            print(f"  {td}: 闸门开但卖出日未到, 跳过(待对账)", flush=True)
             continue
 
         mom = M[t] / M[t - config.MOM_WINDOW] - 1
