@@ -290,9 +290,9 @@ footer { text-align:center; color:var(--ink-faint); font-size:11px; padding:28px
     <div id="runlog"></div>
 
     <div class="weekbar">
-      <button class="nav" id="prevweek" onclick="shiftWeek(-1)">上一周</button>
+      <button class="nav" id="prevweek" onclick="shiftWeek(1)">上一周</button>
       <span class="label" id="weeklabel"></span>
-      <button class="nav" id="nextweek" onclick="shiftWeek(1)">下一周</button>
+      <button class="nav" id="nextweek" onclick="shiftWeek(-1)">下一周</button>
     </div>
     <div class="datebar" id="datebar"></div>
 
@@ -335,11 +335,16 @@ const fmtPct = (v, signed=false) => {
 };
 let ALL_DATES = [], VALIDATED = {}, curDate = null, curWeek = 0;
 
-// 按ISO周分组
+// 按周分组(周一为一周起点, 手动计算避免时区偏移)
+function toISO(d) {
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+}
 function weekKey(dstr) {
-  const d = new Date(dstr + "T00:00:00");
-  const t = new Date(d); t.setDate(d.getDate() - ((d.getDay() + 6) % 7)); // 本周一
-  return t.toISOString().slice(0, 10);
+  const p = dstr.split('-').map(Number);
+  const d = new Date(p[0], p[1]-1, p[2]);
+  const dow = (d.getDay() + 6) % 7; // 周一=0
+  d.setDate(d.getDate() - dow);
+  return toISO(d);
 }
 function groupByWeek(dates) {
   const m = {};
@@ -417,13 +422,22 @@ function renderWeek() {
   if (!weeks.length) return;
   curWeek = Math.max(0, Math.min(curWeek, weeks.length - 1));
   const w = weeks[curWeek];
-  $('#weeklabel').textContent = `第${weeks.length - curWeek}新周 · 本周${w.dates.length}天有记录 (${w.wk} 起)`;
+  const ds = w.dates.slice().sort();
+  $('#weeklabel').textContent = `${ds[ds.length-1]} ~ ${ds[0]} (本周${w.dates.length}天记录)`;
   $('#prevweek').disabled = curWeek >= weeks.length - 1;
   $('#nextweek').disabled = curWeek <= 0;
   $('#datebar').innerHTML = w.dates.map(d =>
     `<button class="datebtn ${d===curDate?'active':''}" onclick="setDate('${d}')">${d}${VALIDATED[d] ? ' ·已对账' : ''}</button>`).join('');
 }
-function shiftWeek(d) { curWeek += d; renderWeek(); }
+// 上一周=往过去翻(索引+1), 下一周=往新翻(索引-1); 切换周后自动选中该周最新一天
+function shiftWeek(d) {
+  const weeks = groupByWeek(ALL_DATES);
+  const nw = Math.max(0, Math.min(curWeek + d, weeks.length - 1));
+  if (nw === curWeek) return;
+  curWeek = nw;
+  const latest = weeks[curWeek].dates.slice().sort().reverse()[0];
+  setDate(latest);
+}
 
 async function setDate(d) {
   curDate = d;
