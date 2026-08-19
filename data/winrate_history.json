@@ -350,5 +350,49 @@
     "actual": -4.17
    }
   ]
+ },
+ {
+  "pred_date": "2026-08-18",
+  "target_date": "2026-08-19",
+  "n": 193,
+  "hit_rate": 0.0933,
+  "avg_actual": -4.92,
+  "top12_hit_rate": 0.0833,
+  "top12_avg": -4.035,
+  "high_conf_n": 2,
+  "high_conf_hit_rate": 0.5,
+  "high_conf_avg": -1.95,
+  "top5": [
+   {
+    "code": "001229",
+    "name": "魅视科技",
+    "p_up": 0.7,
+    "actual": -7.71
+   },
+   {
+    "code": "000620",
+    "name": "盈新发展",
+    "p_up": 0.7,
+    "actual": 3.81
+   },
+   {
+    "code": "300793",
+    "name": "佳禾智能",
+    "p_up": 0.633,
+    "actual": -4.66
+   },
+   {
+    "code": "002798",
+    "name": "帝欧水华",
+    "p_up": 0.633,
+    "actual": -2.75
+   },
+   {
+    "code": "002365",
+    "name": "永安药业",
+    "p_up": 0.633,
+    "actual": -7.85
+   }
+  ]
  }
 ]
