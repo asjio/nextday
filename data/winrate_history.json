@@ -394,5 +394,49 @@
     "actual": -7.85
    }
   ]
+ },
+ {
+  "pred_date": "2026-08-19",
+  "target_date": "2026-08-20",
+  "n": 166,
+  "hit_rate": 0.6084,
+  "avg_actual": -0.164,
+  "top12_hit_rate": 0.5833,
+  "top12_avg": 0.174,
+  "high_conf_n": 1,
+  "high_conf_hit_rate": 1.0,
+  "high_conf_avg": 2.25,
+  "top5": [
+   {
+    "code": "605378",
+    "name": "野马电池",
+    "p_up": 0.7,
+    "actual": 2.25
+   },
+   {
+    "code": "600793",
+    "name": "宜宾纸业",
+    "p_up": 0.683,
+    "actual": 0.42
+   },
+   {
+    "code": "000993",
+    "name": "闽东电力",
+    "p_up": 0.633,
+    "actual": 1.35
+   },
+   {
+    "code": "000526",
+    "name": "学大教育",
+    "p_up": 0.633,
+    "actual": -3.94
+   },
+   {
+    "code": "300911",
+    "name": "亿田智能",
+    "p_up": 0.633,
+    "actual": -7.5
+   }
+  ]
  }
 ]
