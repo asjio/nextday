@@ -438,5 +438,49 @@
     "actual": -7.5
    }
   ]
+ },
+ {
+  "pred_date": "2026-08-20",
+  "target_date": "2026-08-21",
+  "n": 202,
+  "hit_rate": 0.4208,
+  "avg_actual": -0.303,
+  "top12_hit_rate": 0.25,
+  "top12_avg": -0.831,
+  "high_conf_n": 0,
+  "high_conf_hit_rate": null,
+  "high_conf_avg": null,
+  "top5": [
+   {
+    "code": "601700",
+    "name": "风范股份",
+    "p_up": 0.683,
+    "actual": -6.53
+   },
+   {
+    "code": "001210",
+    "name": "金房能源",
+    "p_up": 0.683,
+    "actual": -3.73
+   },
+   {
+    "code": "000831",
+    "name": "中国稀土",
+    "p_up": 0.667,
+    "actual": -2.8
+   },
+   {
+    "code": "002579",
+    "name": "中京电子",
+    "p_up": 0.667,
+    "actual": -2.81
+   },
+   {
+    "code": "000931",
+    "name": "中 关 村",
+    "p_up": 0.65,
+    "actual": 9.94
+   }
+  ]
  }
 ]
