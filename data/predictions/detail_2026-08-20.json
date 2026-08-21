@@ -1,0 +1,1618 @@
+[
+ {
+  "code": "sz002038",
+  "name": "双鹭药业",
+  "p_up": 0.6333333333333333,
+  "actual": 9.94,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000931",
+  "name": "中 关 村",
+  "p_up": 0.65,
+  "actual": 9.94,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000831",
+  "name": "中国稀土",
+  "p_up": 0.6666666666666666,
+  "actual": -2.8,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000710",
+  "name": "贝瑞基因",
+  "p_up": 0.6,
+  "actual": 10.03,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603606",
+  "name": "东方电缆",
+  "p_up": 0.6333333333333333,
+  "actual": -4.88,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh601611",
+  "name": "中国核建",
+  "p_up": 0.5666666666666667,
+  "actual": -0.09,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600717",
+  "name": "天津港",
+  "p_up": 0.6166666666666667,
+  "actual": -0.94,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300979",
+  "name": "华利集团",
+  "p_up": 0.55,
+  "actual": -3.4,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300912",
+  "name": "凯龙高科",
+  "p_up": 0.6333333333333333,
+  "actual": 2.98,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002030",
+  "name": "达安基因",
+  "p_up": 0.6166666666666667,
+  "actual": -6.2,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603988",
+  "name": "中电电机",
+  "p_up": 0.5833333333333334,
+  "actual": -1.93,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002043",
+  "name": "兔 宝 宝",
+  "p_up": 0.6333333333333333,
+  "actual": -3.31,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301118",
+  "name": "恒光股份",
+  "p_up": 0.55,
+  "actual": 0.99,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002313",
+  "name": "日海智能",
+  "p_up": 0.5166666666666667,
+  "actual": 0.68,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002262",
+  "name": "恩华药业",
+  "p_up": 0.5333333333333333,
+  "actual": -3.69,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh601700",
+  "name": "风范股份",
+  "p_up": 0.6833333333333333,
+  "actual": -6.53,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600825",
+  "name": "新华传媒",
+  "p_up": 0.5333333333333333,
+  "actual": -0.2,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300844",
+  "name": "山水比德",
+  "p_up": 0.55,
+  "actual": 0.13,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600539",
+  "name": "狮头股份",
+  "p_up": 0.6333333333333333,
+  "actual": -1.63,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002579",
+  "name": "中京电子",
+  "p_up": 0.6666666666666666,
+  "actual": -2.81,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300725",
+  "name": "药石科技",
+  "p_up": 0.6,
+  "actual": -5.37,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600461",
+  "name": "洪城环境",
+  "p_up": 0.5333333333333333,
+  "actual": -0.79,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000017",
+  "name": "深中华A",
+  "p_up": 0.6,
+  "actual": 10.06,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh601118",
+  "name": "海南橡胶",
+  "p_up": 0.6,
+  "actual": -0.81,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300387",
+  "name": "富邦科技",
+  "p_up": 0.55,
+  "actual": -0.81,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300149",
+  "name": "睿智医药",
+  "p_up": 0.5666666666666667,
+  "actual": -8.55,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603016",
+  "name": "新宏泰",
+  "p_up": 0.5666666666666667,
+  "actual": -1.96,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000777",
+  "name": "中核科技",
+  "p_up": 0.5,
+  "actual": 0.6,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh601798",
+  "name": "蓝科高新",
+  "p_up": 0.5,
+  "actual": 1.71,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002293",
+  "name": "罗莱生活",
+  "p_up": 0.48333333333333334,
+  "actual": -0.44,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300545",
+  "name": "联得装备",
+  "p_up": 0.55,
+  "actual": 5.81,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz001210",
+  "name": "金房能源",
+  "p_up": 0.6833333333333333,
+  "actual": -3.73,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603716",
+  "name": "塞力医疗",
+  "p_up": 0.55,
+  "actual": -8.44,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002491",
+  "name": "通鼎互联",
+  "p_up": 0.5833333333333334,
+  "actual": 10.02,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002165",
+  "name": "红 宝 丽",
+  "p_up": 0.5666666666666667,
+  "actual": -0.9,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002940",
+  "name": "昂利康",
+  "p_up": 0.5666666666666667,
+  "actual": -7.11,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh601136",
+  "name": "首创证券",
+  "p_up": 0.4666666666666667,
+  "actual": -0.58,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603153",
+  "name": "上海建科",
+  "p_up": 0.4666666666666667,
+  "actual": -0.23,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300004",
+  "name": "南风股份",
+  "p_up": 0.48333333333333334,
+  "actual": 12.53,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002375",
+  "name": "亚厦股份",
+  "p_up": 0.5,
+  "actual": -1.37,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603035",
+  "name": "常熟汽饰",
+  "p_up": 0.5,
+  "actual": -0.72,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300373",
+  "name": "扬杰科技",
+  "p_up": 0.5166666666666667,
+  "actual": 7.01,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603629",
+  "name": "利通电子",
+  "p_up": 0.48333333333333334,
+  "actual": -3.52,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600059",
+  "name": "古越龙山",
+  "p_up": 0.48333333333333334,
+  "actual": -0.76,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh605589",
+  "name": "圣泉集团",
+  "p_up": 0.48333333333333334,
+  "actual": 1.94,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300122",
+  "name": "智飞生物",
+  "p_up": 0.6166666666666667,
+  "actual": -4.01,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz001333",
+  "name": "光华股份",
+  "p_up": 0.5833333333333334,
+  "actual": -3.02,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000786",
+  "name": "北新建材",
+  "p_up": 0.4666666666666667,
+  "actual": -8.95,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002250",
+  "name": "联化科技",
+  "p_up": 0.48333333333333334,
+  "actual": -2.23,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000712",
+  "name": "锦龙股份",
+  "p_up": 0.5166666666666667,
+  "actual": 0.35,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301201",
+  "name": "诚达药业",
+  "p_up": 0.55,
+  "actual": -7.66,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002737",
+  "name": "葵花药业",
+  "p_up": 0.5,
+  "actual": -4.26,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600415",
+  "name": "小商品城",
+  "p_up": 0.5,
+  "actual": -0.79,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000829",
+  "name": "天音控股",
+  "p_up": 0.5333333333333333,
+  "actual": 1.22,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600936",
+  "name": "北投科技",
+  "p_up": 0.55,
+  "actual": 0.2,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000503",
+  "name": "国新健康",
+  "p_up": 0.4666666666666667,
+  "actual": -4.58,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz003010",
+  "name": "若羽臣",
+  "p_up": 0.5333333333333333,
+  "actual": -0.07,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301236",
+  "name": "软通动力",
+  "p_up": 0.5,
+  "actual": -0.48,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002918",
+  "name": "蒙娜丽莎",
+  "p_up": 0.5,
+  "actual": 1.4,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000544",
+  "name": "中原环保",
+  "p_up": 0.5,
+  "actual": -1.63,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000520",
+  "name": "凤凰航运",
+  "p_up": 0.5333333333333333,
+  "actual": -3.17,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000021",
+  "name": "深科技",
+  "p_up": 0.48333333333333334,
+  "actual": 0.99,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300986",
+  "name": "志特新材",
+  "p_up": 0.48333333333333334,
+  "actual": -3.02,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600030",
+  "name": "中信证券",
+  "p_up": 0.4666666666666667,
+  "actual": 0.3,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh601212",
+  "name": "白银有色",
+  "p_up": 0.48333333333333334,
+  "actual": 9.93,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301230",
+  "name": "泓博医药",
+  "p_up": 0.55,
+  "actual": -4.82,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002479",
+  "name": "富春环保",
+  "p_up": 0.5,
+  "actual": 3.28,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600335",
+  "name": "国机汽车",
+  "p_up": 0.4666666666666667,
+  "actual": 4.37,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300006",
+  "name": "莱美药业",
+  "p_up": 0.5833333333333334,
+  "actual": -11.28,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000099",
+  "name": "中信海直",
+  "p_up": 0.45,
+  "actual": -0.51,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603888",
+  "name": "新华网",
+  "p_up": 0.5,
+  "actual": -0.25,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002841",
+  "name": "视源股份",
+  "p_up": 0.48333333333333334,
+  "actual": -0.73,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh601933",
+  "name": "永辉超市",
+  "p_up": 0.4666666666666667,
+  "actual": -2.85,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002077",
+  "name": "大港股份",
+  "p_up": 0.4666666666666667,
+  "actual": 0.08,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000426",
+  "name": "兴业银锡",
+  "p_up": 0.48333333333333334,
+  "actual": 6.02,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301310",
+  "name": "鑫宏业",
+  "p_up": 0.48333333333333334,
+  "actual": 2.43,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002640",
+  "name": "跨境通",
+  "p_up": 0.45,
+  "actual": 0.0,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002222",
+  "name": "福晶科技",
+  "p_up": 0.48333333333333334,
+  "actual": 1.6,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000524",
+  "name": "岭南控股",
+  "p_up": 0.48333333333333334,
+  "actual": 0.62,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300142",
+  "name": "沃森生物",
+  "p_up": 0.6,
+  "actual": 6.48,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh601162",
+  "name": "天风证券",
+  "p_up": 0.5,
+  "actual": 0.28,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz001390",
+  "name": "古麒绒材",
+  "p_up": 0.43333333333333335,
+  "actual": -0.85,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603999",
+  "name": "读者传媒",
+  "p_up": 0.45,
+  "actual": -0.36,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002400",
+  "name": "省广集团",
+  "p_up": 0.48333333333333334,
+  "actual": -0.77,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301568",
+  "name": "思泰克",
+  "p_up": 0.43333333333333335,
+  "actual": 4.67,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh601318",
+  "name": "中国平安",
+  "p_up": 0.45,
+  "actual": 2.32,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000523",
+  "name": "红棉股份",
+  "p_up": 0.6166666666666667,
+  "actual": -9.92,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600327",
+  "name": "大东方",
+  "p_up": 0.48333333333333334,
+  "actual": -3.77,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh605055",
+  "name": "迎丰股份",
+  "p_up": 0.4666666666666667,
+  "actual": 0.73,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002057",
+  "name": "中钢天源",
+  "p_up": 0.4166666666666667,
+  "actual": 1.41,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300841",
+  "name": "康华生物",
+  "p_up": 0.6,
+  "actual": -6.32,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000628",
+  "name": "高新发展",
+  "p_up": 0.5,
+  "actual": 9.99,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000605",
+  "name": "渤海股份",
+  "p_up": 0.48333333333333334,
+  "actual": -0.84,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600663",
+  "name": "陆家嘴",
+  "p_up": 0.4666666666666667,
+  "actual": -1.88,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603968",
+  "name": "醋化股份",
+  "p_up": 0.4,
+  "actual": -0.19,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000538",
+  "name": "云南白药",
+  "p_up": 0.4666666666666667,
+  "actual": -1.75,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002903",
+  "name": "宇环数控",
+  "p_up": 0.55,
+  "actual": 10.01,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301309",
+  "name": "万得凯",
+  "p_up": 0.4166666666666667,
+  "actual": -0.74,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002577",
+  "name": "雷柏科技",
+  "p_up": 0.5333333333333333,
+  "actual": 2.5,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603057",
+  "name": "紫燕食品",
+  "p_up": 0.43333333333333335,
+  "actual": 0.09,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603519",
+  "name": "立霸股份",
+  "p_up": 0.5833333333333334,
+  "actual": -0.73,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600250",
+  "name": "南京商旅",
+  "p_up": 0.55,
+  "actual": -0.97,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603036",
+  "name": "如通股份",
+  "p_up": 0.55,
+  "actual": 1.94,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603567",
+  "name": "珍宝岛",
+  "p_up": 0.45,
+  "actual": -9.18,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603626",
+  "name": "科森科技",
+  "p_up": 0.5333333333333333,
+  "actual": 10.03,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600683",
+  "name": "京投发展",
+  "p_up": 0.48333333333333334,
+  "actual": -6.01,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000007",
+  "name": "全新好",
+  "p_up": 0.5166666666666667,
+  "actual": 3.23,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301183",
+  "name": "东田微",
+  "p_up": 0.5166666666666667,
+  "actual": 7.56,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301529",
+  "name": "福赛科技",
+  "p_up": 0.5166666666666667,
+  "actual": 8.23,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301266",
+  "name": "宇邦新材",
+  "p_up": 0.4,
+  "actual": 0.64,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600109",
+  "name": "国金证券",
+  "p_up": 0.43333333333333335,
+  "actual": -0.35,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002828",
+  "name": "贝肯能源",
+  "p_up": 0.45,
+  "actual": 0.25,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000713",
+  "name": "国投丰乐",
+  "p_up": 0.43333333333333335,
+  "actual": -3.29,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603883",
+  "name": "老百姓",
+  "p_up": 0.4166666666666667,
+  "actual": -0.53,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300854",
+  "name": "中兰环保",
+  "p_up": 0.5,
+  "actual": -2.25,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600469",
+  "name": "风神股份",
+  "p_up": 0.4166666666666667,
+  "actual": 0.38,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002522",
+  "name": "浙江众成",
+  "p_up": 0.4666666666666667,
+  "actual": -0.58,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603127",
+  "name": "昭衍新药",
+  "p_up": 0.4666666666666667,
+  "actual": -6.28,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300692",
+  "name": "中赋科技",
+  "p_up": 0.4166666666666667,
+  "actual": -0.1,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz001317",
+  "name": "三羊马",
+  "p_up": 0.43333333333333335,
+  "actual": -0.89,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603126",
+  "name": "中材节能",
+  "p_up": 0.4166666666666667,
+  "actual": 0.17,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300056",
+  "name": "中创环保",
+  "p_up": 0.4166666666666667,
+  "actual": 0.12,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000506",
+  "name": "招金黄金",
+  "p_up": 0.48333333333333334,
+  "actual": 6.79,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300867",
+  "name": "圣元环保",
+  "p_up": 0.38333333333333336,
+  "actual": 2.13,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603037",
+  "name": "凯众股份",
+  "p_up": 0.5,
+  "actual": 1.09,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300586",
+  "name": "美联新材",
+  "p_up": 0.43333333333333335,
+  "actual": 2.02,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz001337",
+  "name": "四川黄金",
+  "p_up": 0.5,
+  "actual": 5.97,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301613",
+  "name": "新铝时代",
+  "p_up": 0.4166666666666667,
+  "actual": -1.18,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300097",
+  "name": "智云股份",
+  "p_up": 0.5,
+  "actual": 5.47,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002021",
+  "name": "中捷资源",
+  "p_up": 0.4,
+  "actual": 1.14,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600739",
+  "name": "辽宁成大",
+  "p_up": 0.38333333333333336,
+  "actual": -2.74,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300209",
+  "name": "行云科技",
+  "p_up": 0.4666666666666667,
+  "actual": -1.88,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600129",
+  "name": "太极集团",
+  "p_up": 0.4166666666666667,
+  "actual": -9.38,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603123",
+  "name": "翠微股份",
+  "p_up": 0.43333333333333335,
+  "actual": 2.49,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301552",
+  "name": "科力装备",
+  "p_up": 0.4,
+  "actual": -2.63,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301389",
+  "name": "隆扬电子",
+  "p_up": 0.36666666666666664,
+  "actual": 4.33,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300244",
+  "name": "迪安诊断",
+  "p_up": 0.36666666666666664,
+  "actual": -1.05,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300007",
+  "name": "汉威科技",
+  "p_up": 0.43333333333333335,
+  "actual": 0.32,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002811",
+  "name": "郑中设计",
+  "p_up": 0.6,
+  "actual": 1.65,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300631",
+  "name": "久吾高科",
+  "p_up": 0.35,
+  "actual": 0.79,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002826",
+  "name": "易明医药",
+  "p_up": 0.35,
+  "actual": -2.47,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000726",
+  "name": "鲁  泰Ａ",
+  "p_up": 0.4,
+  "actual": -2.01,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600475",
+  "name": "华光环能",
+  "p_up": 0.35,
+  "actual": 0.54,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000981",
+  "name": "山子高科",
+  "p_up": 0.36666666666666664,
+  "actual": 1.15,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300566",
+  "name": "激智科技",
+  "p_up": 0.36666666666666664,
+  "actual": 3.17,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002716",
+  "name": "湖南白银",
+  "p_up": 0.45,
+  "actual": 10.03,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000701",
+  "name": "厦门信达",
+  "p_up": 0.4,
+  "actual": -0.39,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002693",
+  "name": "双成药业",
+  "p_up": 0.4166666666666667,
+  "actual": -5.71,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000603",
+  "name": "盛达资源",
+  "p_up": 0.38333333333333336,
+  "actual": 10.01,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600962",
+  "name": "国投中鲁",
+  "p_up": 0.3333333333333333,
+  "actual": 0.83,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002138",
+  "name": "顺络电子",
+  "p_up": 0.3333333333333333,
+  "actual": 3.16,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603101",
+  "name": "汇嘉时代",
+  "p_up": 0.35,
+  "actual": -2.85,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300817",
+  "name": "双飞集团",
+  "p_up": 0.36666666666666664,
+  "actual": -0.46,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301628",
+  "name": "强达电路",
+  "p_up": 0.4166666666666667,
+  "actual": -0.4,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301042",
+  "name": "安联锐视",
+  "p_up": 0.45,
+  "actual": 1.54,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300612",
+  "name": "宣亚国际",
+  "p_up": 0.36666666666666664,
+  "actual": -0.93,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301060",
+  "name": "兰卫医学",
+  "p_up": 0.45,
+  "actual": -5.43,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002589",
+  "name": "瑞康医药",
+  "p_up": 0.4666666666666667,
+  "actual": -5.92,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600638",
+  "name": "新黄浦",
+  "p_up": 0.38333333333333336,
+  "actual": -1.81,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002365",
+  "name": "永安药业",
+  "p_up": 0.5333333333333333,
+  "actual": 5.27,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh605080",
+  "name": "浙江自然",
+  "p_up": 0.43333333333333335,
+  "actual": -1.52,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002437",
+  "name": "誉衡药业",
+  "p_up": 0.6,
+  "actual": -8.03,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300199",
+  "name": "翰宇药业",
+  "p_up": 0.38333333333333336,
+  "actual": -4.15,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300535",
+  "name": "达威股份",
+  "p_up": 0.43333333333333335,
+  "actual": 4.07,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002104",
+  "name": "恒宝股份",
+  "p_up": 0.43333333333333335,
+  "actual": 7.29,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002177",
+  "name": "御银股份",
+  "p_up": 0.36666666666666664,
+  "actual": 4.72,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002022",
+  "name": "科华生物",
+  "p_up": 0.38333333333333336,
+  "actual": -3.1,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002552",
+  "name": "宝鼎科技",
+  "p_up": 0.4666666666666667,
+  "actual": -3.33,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300773",
+  "name": "拉卡拉",
+  "p_up": 0.31666666666666665,
+  "actual": 4.19,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603327",
+  "name": "福蓉科技",
+  "p_up": 0.35,
+  "actual": 5.3,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301171",
+  "name": "易点天下",
+  "p_up": 0.4,
+  "actual": -0.47,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300139",
+  "name": "晓程科技",
+  "p_up": 0.36666666666666664,
+  "actual": 8.55,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301290",
+  "name": "东星医疗",
+  "p_up": 0.35,
+  "actual": -1.46,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603017",
+  "name": "中衡设计",
+  "p_up": 0.36666666666666664,
+  "actual": -0.63,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz001222",
+  "name": "源飞宠物",
+  "p_up": 0.31666666666666665,
+  "actual": -1.83,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002821",
+  "name": "凯莱英",
+  "p_up": 0.36666666666666664,
+  "actual": -7.84,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000626",
+  "name": "远大控股",
+  "p_up": 0.43333333333333335,
+  "actual": -2.76,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603528",
+  "name": "多伦科技",
+  "p_up": 0.2833333333333333,
+  "actual": 0.0,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002427",
+  "name": "尤夫股份",
+  "p_up": 0.38333333333333336,
+  "actual": -1.74,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300539",
+  "name": "横河精密",
+  "p_up": 0.3,
+  "actual": 2.54,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301047",
+  "name": "义翘神州",
+  "p_up": 0.5333333333333333,
+  "actual": -9.66,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz003040",
+  "name": "楚天龙",
+  "p_up": 0.38333333333333336,
+  "actual": 9.97,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300404",
+  "name": "博济医药",
+  "p_up": 0.5,
+  "actual": -8.32,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002172",
+  "name": "澳洋健康",
+  "p_up": 0.4666666666666667,
+  "actual": -9.01,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300676",
+  "name": "华大基因",
+  "p_up": 0.4666666666666667,
+  "actual": -3.61,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300943",
+  "name": "春晖智控",
+  "p_up": 0.3333333333333333,
+  "actual": -0.71,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300363",
+  "name": "博腾股份",
+  "p_up": 0.48333333333333334,
+  "actual": -10.58,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603958",
+  "name": "哈森股份",
+  "p_up": 0.5333333333333333,
+  "actual": 10.01,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603538",
+  "name": "美诺华",
+  "p_up": 0.3,
+  "actual": -10.01,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000668",
+  "name": "荣丰控股",
+  "p_up": 0.4166666666666667,
+  "actual": -0.09,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh603221",
+  "name": "爱丽家居",
+  "p_up": 0.48333333333333334,
+  "actual": -8.18,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300570",
+  "name": "太辰光",
+  "p_up": 0.55,
+  "actual": 0.5,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300601",
+  "name": "康泰生物",
+  "p_up": 0.4166666666666667,
+  "actual": -9.95,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300740",
+  "name": "水羊股份",
+  "p_up": 0.26666666666666666,
+  "actual": 1.25,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz002016",
+  "name": "世荣兆业",
+  "p_up": 0.26666666666666666,
+  "actual": -1.95,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz000421",
+  "name": "南京公用",
+  "p_up": 0.35,
+  "actual": -4.08,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300009",
+  "name": "安科生物",
+  "p_up": 0.38333333333333336,
+  "actual": -11.63,
+  "hit": false,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301122",
+  "name": "采纳股份",
+  "p_up": 0.4,
+  "actual": 1.28,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz301080",
+  "name": "百普赛斯",
+  "p_up": 0.48333333333333334,
+  "actual": 2.34,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sh600613",
+  "name": "神奇制药",
+  "p_up": 0.5333333333333333,
+  "actual": 5.14,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300109",
+  "name": "新开源",
+  "p_up": 0.36666666666666664,
+  "actual": 2.63,
+  "hit": true,
+  "next_date": "2026-08-21"
+ },
+ {
+  "code": "sz300598",
+  "name": "诚迈科技",
+  "p_up": 0.31666666666666665,
+  "actual": -9.78,
+  "hit": false,
+  "next_date": "2026-08-21"
+ }
+]
