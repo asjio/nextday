@@ -482,5 +482,49 @@
     "actual": 9.94
    }
   ]
+ },
+ {
+  "pred_date": "2026-08-21",
+  "target_date": "2026-08-24",
+  "n": 200,
+  "hit_rate": 0.38,
+  "avg_actual": -0.65,
+  "top12_hit_rate": 0.25,
+  "top12_avg": -2.144,
+  "high_conf_n": 2,
+  "high_conf_hit_rate": 0.5,
+  "high_conf_avg": -0.42,
+  "top5": [
+   {
+    "code": "300345",
+    "name": "华民股份",
+    "p_up": 0.717,
+    "actual": 2.45
+   },
+   {
+    "code": "002396",
+    "name": "星网锐捷",
+    "p_up": 0.7,
+    "actual": -3.29
+   },
+   {
+    "code": "002536",
+    "name": "飞龙股份",
+    "p_up": 0.683,
+    "actual": 3.9
+   },
+   {
+    "code": "603333",
+    "name": "福华尚纬",
+    "p_up": 0.65,
+    "actual": -3.45
+   },
+   {
+    "code": "603803",
+    "name": "瑞斯康达",
+    "p_up": 0.65,
+    "actual": -1.68
+   }
+  ]
  }
 ]
