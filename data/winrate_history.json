@@ -526,5 +526,49 @@
     "actual": -1.68
    }
   ]
+ },
+ {
+  "pred_date": "2026-08-24",
+  "target_date": "2026-08-25",
+  "n": 189,
+  "hit_rate": 0.6138,
+  "avg_actual": 0.924,
+  "top12_hit_rate": 0.5833,
+  "top12_avg": 1.044,
+  "high_conf_n": 2,
+  "high_conf_hit_rate": 0.5,
+  "high_conf_avg": 4.905,
+  "top5": [
+   {
+    "code": "000017",
+    "name": "深中华A",
+    "p_up": 0.75,
+    "actual": 9.97
+   },
+   {
+    "code": "301191",
+    "name": "菲菱科思",
+    "p_up": 0.717,
+    "actual": -0.16
+   },
+   {
+    "code": "000576",
+    "name": "甘化科工",
+    "p_up": 0.667,
+    "actual": 1.55
+   },
+   {
+    "code": "603200",
+    "name": "上海洗霸",
+    "p_up": 0.667,
+    "actual": -0.82
+   },
+   {
+    "code": "000628",
+    "name": "高新发展",
+    "p_up": 0.667,
+    "actual": 0.21
+   }
+  ]
  }
 ]
