@@ -570,5 +570,49 @@
     "actual": 0.21
    }
   ]
+ },
+ {
+  "pred_date": "2026-08-25",
+  "target_date": "2026-08-26",
+  "n": 198,
+  "hit_rate": 0.4899,
+  "avg_actual": 0.185,
+  "top12_hit_rate": 0.4167,
+  "top12_avg": 0.57,
+  "high_conf_n": 2,
+  "high_conf_hit_rate": 1.0,
+  "high_conf_avg": 6.77,
+  "top5": [
+   {
+    "code": "600838",
+    "name": "上海九百",
+    "p_up": 0.717,
+    "actual": 3.62
+   },
+   {
+    "code": "002094",
+    "name": "青岛金王",
+    "p_up": 0.7,
+    "actual": 9.92
+   },
+   {
+    "code": "600698",
+    "name": "湖南天雁",
+    "p_up": 0.683,
+    "actual": -1.37
+   },
+   {
+    "code": "600281",
+    "name": "华阳新材",
+    "p_up": 0.683,
+    "actual": -2.97
+   },
+   {
+    "code": "002451",
+    "name": "摩恩电气",
+    "p_up": 0.667,
+    "actual": -2.34
+   }
+  ]
  }
 ]
