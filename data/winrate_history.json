@@ -658,5 +658,49 @@
     "actual": -3.04
    }
   ]
+ },
+ {
+  "pred_date": "2026-08-28",
+  "target_date": "2026-08-31",
+  "n": 196,
+  "hit_rate": 0.5102,
+  "avg_actual": 0.348,
+  "top12_hit_rate": 0.4167,
+  "top12_avg": 1.67,
+  "high_conf_n": 3,
+  "high_conf_hit_rate": 1.0,
+  "high_conf_avg": 9.99,
+  "top5": [
+   {
+    "code": "600371",
+    "name": "万向德农",
+    "p_up": 0.767,
+    "actual": 9.97
+   },
+   {
+    "code": "002886",
+    "name": "沃特股份",
+    "p_up": 0.733,
+    "actual": 10.0
+   },
+   {
+    "code": "000712",
+    "name": "锦龙股份",
+    "p_up": 0.733,
+    "actual": 10.0
+   },
+   {
+    "code": "601700",
+    "name": "风范股份",
+    "p_up": 0.683,
+    "actual": -4.3
+   },
+   {
+    "code": "300624",
+    "name": "万兴科技",
+    "p_up": 0.667,
+    "actual": 9.91
+   }
+  ]
  }
 ]
