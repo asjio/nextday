@@ -702,5 +702,49 @@
     "actual": 9.91
    }
   ]
+ },
+ {
+  "pred_date": "2026-08-31",
+  "target_date": "2026-09-01",
+  "n": 200,
+  "hit_rate": 0.555,
+  "avg_actual": 0.53,
+  "top12_hit_rate": 0.6667,
+  "top12_avg": 2.286,
+  "high_conf_n": 3,
+  "high_conf_hit_rate": 0.6667,
+  "high_conf_avg": 5.92,
+  "top5": [
+   {
+    "code": "000560",
+    "name": "我爱我家",
+    "p_up": 0.8,
+    "actual": 10.0
+   },
+   {
+    "code": "600371",
+    "name": "万向德农",
+    "p_up": 0.8,
+    "actual": 10.01
+   },
+   {
+    "code": "002141",
+    "name": "贤丰控股",
+    "p_up": 0.733,
+    "actual": -2.25
+   },
+   {
+    "code": "002303",
+    "name": "美盈森",
+    "p_up": 0.683,
+    "actual": -2.28
+   },
+   {
+    "code": "002192",
+    "name": "融捷股份",
+    "p_up": 0.65,
+    "actual": -3.1
+   }
+  ]
  }
 ]
