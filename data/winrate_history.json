@@ -746,5 +746,49 @@
     "actual": -3.1
    }
   ]
+ },
+ {
+  "pred_date": "2026-09-01",
+  "target_date": "2026-09-02",
+  "n": 194,
+  "hit_rate": 0.2423,
+  "avg_actual": -1.375,
+  "top12_hit_rate": 0.25,
+  "top12_avg": -1.655,
+  "high_conf_n": 6,
+  "high_conf_hit_rate": 0.0,
+  "high_conf_avg": -5.08,
+  "top5": [
+   {
+    "code": "603980",
+    "name": "吉华集团",
+    "p_up": 0.733,
+    "actual": -7.7
+   },
+   {
+    "code": "002015",
+    "name": "协鑫能科",
+    "p_up": 0.717,
+    "actual": -2.12
+   },
+   {
+    "code": "300624",
+    "name": "万兴科技",
+    "p_up": 0.717,
+    "actual": -1.46
+   },
+   {
+    "code": "605305",
+    "name": "中际联合",
+    "p_up": 0.7,
+    "actual": -2.88
+   },
+   {
+    "code": "600354",
+    "name": "敦煌种业",
+    "p_up": 0.7,
+    "actual": -9.98
+   }
+  ]
  }
 ]
