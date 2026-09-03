@@ -790,5 +790,49 @@
     "actual": -9.98
    }
   ]
+ },
+ {
+  "pred_date": "2026-09-02",
+  "target_date": "2026-09-03",
+  "n": 191,
+  "hit_rate": 0.356,
+  "avg_actual": -0.29,
+  "top12_hit_rate": 0.25,
+  "top12_avg": -1.531,
+  "high_conf_n": 3,
+  "high_conf_hit_rate": 0.3333,
+  "high_conf_avg": -1.657,
+  "top5": [
+   {
+    "code": "600967",
+    "name": "内蒙一机",
+    "p_up": 0.717,
+    "actual": 1.12
+   },
+   {
+    "code": "000892",
+    "name": "欢瑞世纪",
+    "p_up": 0.717,
+    "actual": -2.31
+   },
+   {
+    "code": "603216",
+    "name": "梦天家居",
+    "p_up": 0.7,
+    "actual": -3.78
+   },
+   {
+    "code": "002632",
+    "name": "道明光学",
+    "p_up": 0.683,
+    "actual": -6.68
+   },
+   {
+    "code": "002708",
+    "name": "光洋股份",
+    "p_up": 0.683,
+    "actual": 10.03
+   }
+  ]
  }
 ]
