@@ -834,5 +834,49 @@
     "actual": 10.03
    }
   ]
+ },
+ {
+  "pred_date": "2026-09-03",
+  "target_date": "2026-09-04",
+  "n": 201,
+  "hit_rate": 0.3383,
+  "avg_actual": -0.953,
+  "top12_hit_rate": 0.3333,
+  "top12_avg": -1.471,
+  "high_conf_n": 1,
+  "high_conf_hit_rate": 0.0,
+  "high_conf_avg": -1.09,
+  "top5": [
+   {
+    "code": "300830",
+    "name": "金现代",
+    "p_up": 0.75,
+    "actual": -1.09
+   },
+   {
+    "code": "002300",
+    "name": "太阳电缆",
+    "p_up": 0.683,
+    "actual": -4.29
+   },
+   {
+    "code": "300529",
+    "name": "健帆生物",
+    "p_up": 0.65,
+    "actual": 1.17
+   },
+   {
+    "code": "600969",
+    "name": "郴电国际",
+    "p_up": 0.65,
+    "actual": -4.86
+   },
+   {
+    "code": "601212",
+    "name": "白银有色",
+    "p_up": 0.65,
+    "actual": -0.41
+   }
+  ]
  }
 ]
