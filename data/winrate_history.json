@@ -878,5 +878,49 @@
     "actual": -0.41
    }
   ]
+ },
+ {
+  "pred_date": "2026-09-04",
+  "target_date": "2026-09-07",
+  "n": 187,
+  "hit_rate": 0.5936,
+  "avg_actual": 1.152,
+  "top12_hit_rate": 1.0,
+  "top12_avg": 5.493,
+  "high_conf_n": 0,
+  "high_conf_hit_rate": null,
+  "high_conf_avg": null,
+  "top5": [
+   {
+    "code": "603938",
+    "name": "三孚股份",
+    "p_up": 0.667,
+    "actual": 2.28
+   },
+   {
+    "code": "603123",
+    "name": "翠微股份",
+    "p_up": 0.667,
+    "actual": 5.19
+   },
+   {
+    "code": "000428",
+    "name": "华天酒店",
+    "p_up": 0.65,
+    "actual": 10.02
+   },
+   {
+    "code": "600975",
+    "name": "新五丰",
+    "p_up": 0.65,
+    "actual": 5.55
+   },
+   {
+    "code": "000735",
+    "name": "罗 牛 山",
+    "p_up": 0.65,
+    "actual": 9.95
+   }
+  ]
  }
 ]
