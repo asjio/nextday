@@ -922,5 +922,49 @@
     "actual": 9.95
    }
   ]
+ },
+ {
+  "pred_date": "2026-09-07",
+  "target_date": "2026-09-08",
+  "n": 201,
+  "hit_rate": 0.6269,
+  "avg_actual": 1.279,
+  "top12_hit_rate": 0.75,
+  "top12_avg": 3.341,
+  "high_conf_n": 2,
+  "high_conf_hit_rate": 1.0,
+  "high_conf_avg": 6.86,
+  "top5": [
+   {
+    "code": "002702",
+    "name": "海欣食品",
+    "p_up": 0.717,
+    "actual": 10.05
+   },
+   {
+    "code": "001366",
+    "name": "播恩集团",
+    "p_up": 0.7,
+    "actual": 3.67
+   },
+   {
+    "code": "600791",
+    "name": "京能置业",
+    "p_up": 0.683,
+    "actual": -0.25
+   },
+   {
+    "code": "600330",
+    "name": "天通股份",
+    "p_up": 0.683,
+    "actual": 4.12
+   },
+   {
+    "code": "300112",
+    "name": "万讯自控",
+    "p_up": 0.683,
+    "actual": -6.82
+   }
+  ]
  }
 ]
