@@ -966,5 +966,49 @@
     "actual": -6.82
    }
   ]
+ },
+ {
+  "pred_date": "2026-09-08",
+  "target_date": "2026-09-09",
+  "n": 199,
+  "hit_rate": 0.3317,
+  "avg_actual": -0.573,
+  "top12_hit_rate": 0.25,
+  "top12_avg": -0.365,
+  "high_conf_n": 2,
+  "high_conf_hit_rate": 0.0,
+  "high_conf_avg": -3.28,
+  "top5": [
+   {
+    "code": "600162",
+    "name": "香江控股",
+    "p_up": 0.717,
+    "actual": -5.09
+   },
+   {
+    "code": "002579",
+    "name": "中京电子",
+    "p_up": 0.7,
+    "actual": -1.47
+   },
+   {
+    "code": "300421",
+    "name": "力星股份",
+    "p_up": 0.667,
+    "actual": -0.12
+   },
+   {
+    "code": "002365",
+    "name": "永安药业",
+    "p_up": 0.667,
+    "actual": -3.42
+   },
+   {
+    "code": "000912",
+    "name": "泸天化",
+    "p_up": 0.667,
+    "actual": 9.94
+   }
+  ]
  }
 ]
