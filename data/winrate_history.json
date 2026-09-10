@@ -1010,5 +1010,49 @@
     "actual": 9.94
    }
   ]
+ },
+ {
+  "pred_date": "2026-09-09",
+  "target_date": "2026-09-10",
+  "n": 197,
+  "hit_rate": 0.269,
+  "avg_actual": -1.346,
+  "top12_hit_rate": 0.1667,
+  "top12_avg": -1.868,
+  "high_conf_n": 1,
+  "high_conf_hit_rate": 0.0,
+  "high_conf_avg": -10.02,
+  "top5": [
+   {
+    "code": "603042",
+    "name": "华脉科技",
+    "p_up": 0.767,
+    "actual": -10.02
+   },
+   {
+    "code": "603515",
+    "name": "欧普照明",
+    "p_up": 0.65,
+    "actual": -0.2
+   },
+   {
+    "code": "301218",
+    "name": "华是科技",
+    "p_up": 0.65,
+    "actual": -1.93
+   },
+   {
+    "code": "603900",
+    "name": "莱绅通灵",
+    "p_up": 0.633,
+    "actual": -1.74
+   },
+   {
+    "code": "600403",
+    "name": "大有能源",
+    "p_up": 0.633,
+    "actual": 4.01
+   }
+  ]
  }
 ]
