@@ -1054,5 +1054,75 @@
     "actual": 4.01
    }
   ]
+ },
+ {
+  "pred_date": "2026-09-10",
+  "target_date": "2026-09-11",
+  "n": 186,
+  "hit_rate": 0.2366,
+  "avg_actual": -1.685,
+  "top12_hit_rate": 0.25,
+  "top12_avg": -1.421,
+  "high_conf_n": 0,
+  "high_conf_hit_rate": null,
+  "high_conf_avg": null,
+  "top5": [
+   {
+    "code": "002824",
+    "name": "和胜股份",
+    "p_up": 0.683,
+    "actual": -2.64
+   },
+   {
+    "code": "000532",
+    "name": "华金资本",
+    "p_up": 0.667,
+    "actual": -2.33
+   },
+   {
+    "code": "002543",
+    "name": "万和电气",
+    "p_up": 0.65,
+    "actual": -2.15
+   },
+   {
+    "code": "001393",
+    "name": "维通利",
+    "p_up": 0.65,
+    "actual": -2.88
+   },
+   {
+    "code": "603105",
+    "name": "芯能科技",
+    "p_up": 0.65,
+    "actual": 2.74
+   }
+  ]
+ },
+ {
+  "pred_date": "2026-09-11",
+  "target_date": "2026-09-14",
+  "n": 2,
+  "hit_rate": 1.0,
+  "avg_actual": 8.695,
+  "top12_hit_rate": 1.0,
+  "top12_avg": 8.695,
+  "high_conf_n": 0,
+  "high_conf_hit_rate": null,
+  "high_conf_avg": null,
+  "top5": [
+   {
+    "code": "002897",
+    "name": "意华股份",
+    "p_up": 0.467,
+    "actual": 10.0
+   },
+   {
+    "code": "300913",
+    "name": "兆龙互连",
+    "p_up": 0.45,
+    "actual": 7.39
+   }
+  ]
  }
 ]
