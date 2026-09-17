@@ -1168,5 +1168,49 @@
     "actual": 10.01
    }
   ]
+ },
+ {
+  "pred_date": "2026-09-15",
+  "target_date": "2026-09-16",
+  "n": 192,
+  "hit_rate": 0.7083,
+  "avg_actual": 1.561,
+  "top12_hit_rate": 0.8333,
+  "top12_avg": 2.994,
+  "high_conf_n": 5,
+  "high_conf_hit_rate": 1.0,
+  "high_conf_avg": 4.738,
+  "top5": [
+   {
+    "code": "002585",
+    "name": "双星新材",
+    "p_up": 0.75,
+    "actual": 0.91
+   },
+   {
+    "code": "002213",
+    "name": "大为股份",
+    "p_up": 0.733,
+    "actual": 0.31
+   },
+   {
+    "code": "002674",
+    "name": "兴业科技",
+    "p_up": 0.733,
+    "actual": 4.72
+   },
+   {
+    "code": "603186",
+    "name": "华正新材",
+    "p_up": 0.733,
+    "actual": 0.96
+   },
+   {
+    "code": "301373",
+    "name": "凌玮科技",
+    "p_up": 0.717,
+    "actual": 16.79
+   }
+  ]
  }
 ]
