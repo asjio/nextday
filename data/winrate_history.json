@@ -1212,5 +1212,49 @@
     "actual": 16.79
    }
   ]
+ },
+ {
+  "pred_date": "2026-09-17",
+  "target_date": "2026-09-18",
+  "n": 199,
+  "hit_rate": 0.6734,
+  "avg_actual": 1.369,
+  "top12_hit_rate": 0.75,
+  "top12_avg": 3.811,
+  "high_conf_n": 2,
+  "high_conf_hit_rate": 1.0,
+  "high_conf_avg": 5.14,
+  "top5": [
+   {
+    "code": "600609",
+    "name": "金杯汽车",
+    "p_up": 0.733,
+    "actual": 0.28
+   },
+   {
+    "code": "000504",
+    "name": "南华生物",
+    "p_up": 0.7,
+    "actual": 10.0
+   },
+   {
+    "code": "000981",
+    "name": "山子高科",
+    "p_up": 0.683,
+    "actual": -0.33
+   },
+   {
+    "code": "603230",
+    "name": "内蒙新华",
+    "p_up": 0.667,
+    "actual": 10.04
+   },
+   {
+    "code": "300398",
+    "name": "飞凯材料",
+    "p_up": 0.65,
+    "actual": 3.31
+   }
+  ]
  }
 ]
