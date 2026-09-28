@@ -1256,5 +1256,57 @@
     "actual": 3.31
    }
   ]
+ },
+ {
+  "pred_date": "2026-09-23",
+  "target_date": "2026-09-24",
+  "n": 1,
+  "hit_rate": 0.0,
+  "avg_actual": -2.63,
+  "top12_hit_rate": 0.0,
+  "top12_avg": -2.63,
+  "high_conf_n": 0,
+  "high_conf_hit_rate": null,
+  "high_conf_avg": null,
+  "top5": [
+   {
+    "code": "300670",
+    "name": "大烨智能",
+    "p_up": 0.483,
+    "actual": -2.63
+   }
+  ]
+ },
+ {
+  "pred_date": "2026-09-24",
+  "target_date": "2026-09-28",
+  "n": 3,
+  "hit_rate": 0.0,
+  "avg_actual": -2.883,
+  "top12_hit_rate": 0.0,
+  "top12_avg": -2.883,
+  "high_conf_n": 0,
+  "high_conf_hit_rate": null,
+  "high_conf_avg": null,
+  "top5": [
+   {
+    "code": "301136",
+    "name": "招标股份",
+    "p_up": 0.65,
+    "actual": -4.14
+   },
+   {
+    "code": "600343",
+    "name": "航天动力",
+    "p_up": 0.6,
+    "actual": -1.08
+   },
+   {
+    "code": "000547",
+    "name": "航天发展",
+    "p_up": 0.583,
+    "actual": -3.43
+   }
+  ]
  }
 ]
