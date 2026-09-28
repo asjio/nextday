@@ -1,0 +1,26 @@
+[
+ {
+  "code": "sh600343",
+  "name": "航天动力",
+  "p_up": 0.6,
+  "actual": -1.08,
+  "hit": false,
+  "next_date": "2026-09-28"
+ },
+ {
+  "code": "sz000547",
+  "name": "航天发展",
+  "p_up": 0.5833333333333334,
+  "actual": -3.43,
+  "hit": false,
+  "next_date": "2026-09-28"
+ },
+ {
+  "code": "sz301136",
+  "name": "招标股份",
+  "p_up": 0.65,
+  "actual": -4.14,
+  "hit": false,
+  "next_date": "2026-09-28"
+ }
+]
